@@ -1,0 +1,60 @@
+PODS:
+  - Alamofire (4.5.1)
+  - DKImagePickerController (3.8.0):
+    - DKImagePickerController/Camera (= 3.8.0)
+    - DKImagePickerController/ImageManager (= 3.8.0)
+  - DKImagePickerController/Camera (3.8.0)
+  - DKImagePickerController/ImageManager (3.8.0)
+  - EasyTipView (1.0.2)
+  - ESPullToRefresh (2.6)
+  - Hero (0.3.6)
+  - ImageViewer (5.0.0)
+  - KeychainAccess (3.1.0)
+  - Kingfisher (4.1.0)
+  - PageMenu (2.0.0)
+  - RxSwift (3.6.1)
+  - SKPhotoBrowser (5.0.0)
+  - SnapKit (4.0.0)
+  - SQLite.swift (0.11.4):
+    - SQLite.swift/standard (= 0.11.4)
+  - SQLite.swift/standard (0.11.4)
+  - SwiftyJSON (3.1.4)
+  - TagListView (1.3.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - DKImagePickerController
+  - EasyTipView
+  - ESPullToRefresh
+  - Hero
+  - ImageViewer
+  - KeychainAccess
+  - Kingfisher
+  - PageMenu
+  - RxSwift
+  - SKPhotoBrowser
+  - SnapKit
+  - SQLite.swift
+  - SwiftyJSON
+  - TagListView
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  DKImagePickerController: 6eea9f1ba2e2ca0ba0317b81d68152d07d9e877f
+  EasyTipView: b93a19be981cc2221d6d7191d49872f547e0bebf
+  ESPullToRefresh: 85f4990acf87f78c6a1466bbbee7a75d7de24db9
+  Hero: d3c6f4dd80cdcdbb339be64e57ae3b5c3ab9938c
+  ImageViewer: 3def6e39c6979ce3e9d001c78eec0d8b895f2f73
+  KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
+  Kingfisher: f14df8cbe576bf55f211fa589e9869bceb4ea87d
+  PageMenu: 9c38fd7e0d9ef4b1408320f55bb907bbc0e538dc
+  RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
+  SKPhotoBrowser: fe936f878955a568c726bf05d14e1d2717d91ce0
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SQLite.swift: 3e3bee21da701b5b9f87c4a672cb54f233505692
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  TagListView: 669f7d4455003c877655875d34829731c4191528
+
+PODFILE CHECKSUM: 111db4de2ceeb34716683ca8a08daac66ada1d0c
+
+COCOAPODS: 1.2.1.beta.1

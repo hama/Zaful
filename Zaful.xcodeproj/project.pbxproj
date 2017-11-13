@@ -1,0 +1,928 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		35CB644EA464B94FCE103849 /* Pods_Zaful.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED1ADAFEF07EB14F2295CD9D /* Pods_Zaful.framework */; };
+		A450A3401FB6ABFB0009CD02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A450A33F1FB6ABFB0009CD02 /* AppDelegate.swift */; };
+		A450A3421FB6ABFB0009CD02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A450A3411FB6ABFB0009CD02 /* ViewController.swift */; };
+		A450A3451FB6ABFB0009CD02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A450A3431FB6ABFB0009CD02 /* Main.storyboard */; };
+		A450A3471FB6ABFB0009CD02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A450A3461FB6ABFB0009CD02 /* Assets.xcassets */; };
+		A450A34A1FB6ABFB0009CD02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A450A3481FB6ABFB0009CD02 /* LaunchScreen.storyboard */; };
+		A450A3551FB6ABFC0009CD02 /* ZafulTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A450A3541FB6ABFC0009CD02 /* ZafulTests.swift */; };
+		A450A3951FB6C64B0009CD02 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A450A3911FB6C64B0009CD02 /* BaseRequest.swift */; };
+		A450A3961FB6C64B0009CD02 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A450A3921FB6C64B0009CD02 /* BaseViewController.swift */; };
+		A450A3971FB6C64B0009CD02 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A450A3931FB6C64B0009CD02 /* NavigationViewController.swift */; };
+		A450A3981FB6C64B0009CD02 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A450A3941FB6C64B0009CD02 /* BaseModel.swift */; };
+		A450A39D1FB6C65A0009CD02 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A450A3991FB6C65A0009CD02 /* BaseRequest.swift */; };
+		A450A39E1FB6C65A0009CD02 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A450A39A1FB6C65A0009CD02 /* BaseViewController.swift */; };
+		A450A39F1FB6C65A0009CD02 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A450A39B1FB6C65A0009CD02 /* NavigationViewController.swift */; };
+		A450A3A01FB6C65A0009CD02 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A450A39C1FB6C65A0009CD02 /* BaseModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A450A3511FB6ABFC0009CD02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A450A3341FB6ABFB0009CD02 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A450A33B1FB6ABFB0009CD02;
+			remoteInfo = Zaful;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A450A33C1FB6ABFB0009CD02 /* Zaful.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zaful.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A450A33F1FB6ABFB0009CD02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A450A3411FB6ABFB0009CD02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A450A3441FB6ABFB0009CD02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A450A3461FB6ABFB0009CD02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A450A3491FB6ABFB0009CD02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A450A34B1FB6ABFC0009CD02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A450A3501FB6ABFC0009CD02 /* ZafulTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZafulTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A450A3541FB6ABFC0009CD02 /* ZafulTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZafulTests.swift; sourceTree = "<group>"; };
+		A450A3561FB6ABFC0009CD02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A450A3911FB6C64B0009CD02 /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		A450A3921FB6C64B0009CD02 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A450A3931FB6C64B0009CD02 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		A450A3941FB6C64B0009CD02 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		A450A3991FB6C65A0009CD02 /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		A450A39A1FB6C65A0009CD02 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A450A39B1FB6C65A0009CD02 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		A450A39C1FB6C65A0009CD02 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		ED1ADAFEF07EB14F2295CD9D /* Pods_Zaful.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zaful.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3B69D570B41B775739DEAEF /* Pods-Zaful.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zaful.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zaful/Pods-Zaful.debug.xcconfig"; sourceTree = "<group>"; };
+		FCC6DC4C6D0CA74235FC90F0 /* Pods-Zaful.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zaful.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zaful/Pods-Zaful.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A450A3391FB6ABFB0009CD02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35CB644EA464B94FCE103849 /* Pods_Zaful.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A450A34D1FB6ABFC0009CD02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C9951A673ED4377032CC372 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F3B69D570B41B775739DEAEF /* Pods-Zaful.debug.xcconfig */,
+				FCC6DC4C6D0CA74235FC90F0 /* Pods-Zaful.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6DA5B1981793D746AFB167D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED1ADAFEF07EB14F2295CD9D /* Pods_Zaful.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A450A3331FB6ABFB0009CD02 = {
+			isa = PBXGroup;
+			children = (
+				A450A33E1FB6ABFB0009CD02 /* Zaful */,
+				A450A3531FB6ABFC0009CD02 /* ZafulTests */,
+				A450A33D1FB6ABFB0009CD02 /* Products */,
+				2C9951A673ED4377032CC372 /* Pods */,
+				6DA5B1981793D746AFB167D1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A450A33D1FB6ABFB0009CD02 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A450A33C1FB6ABFB0009CD02 /* Zaful.app */,
+				A450A3501FB6ABFC0009CD02 /* ZafulTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A450A33E1FB6ABFB0009CD02 /* Zaful */ = {
+			isa = PBXGroup;
+			children = (
+				A450A3871FB6AC300009CD02 /* AppDelegate */,
+				A450A3681FB6AC300009CD02 /* Section */,
+				A450A3601FB6AC2F0009CD02 /* Base */,
+				A450A3611FB6AC2F0009CD02 /* Extensions */,
+				A450A3631FB6AC2F0009CD02 /* Macros */,
+				A450A3621FB6AC2F0009CD02 /* Utily */,
+				A450A35F1FB6AC2F0009CD02 /* Vendor */,
+				A450A3641FB6AC2F0009CD02 /* Resources */,
+				A450A33F1FB6ABFB0009CD02 /* AppDelegate.swift */,
+				A450A3411FB6ABFB0009CD02 /* ViewController.swift */,
+				A450A3431FB6ABFB0009CD02 /* Main.storyboard */,
+				A450A3461FB6ABFB0009CD02 /* Assets.xcassets */,
+				A450A3481FB6ABFB0009CD02 /* LaunchScreen.storyboard */,
+				A450A34B1FB6ABFC0009CD02 /* Info.plist */,
+			);
+			path = Zaful;
+			sourceTree = "<group>";
+		};
+		A450A3531FB6ABFC0009CD02 /* ZafulTests */ = {
+			isa = PBXGroup;
+			children = (
+				A450A3541FB6ABFC0009CD02 /* ZafulTests.swift */,
+				A450A3561FB6ABFC0009CD02 /* Info.plist */,
+			);
+			path = ZafulTests;
+			sourceTree = "<group>";
+		};
+		A450A35F1FB6AC2F0009CD02 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		A450A3601FB6AC2F0009CD02 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A450A39C1FB6C65A0009CD02 /* BaseModel.swift */,
+				A450A3991FB6C65A0009CD02 /* BaseRequest.swift */,
+				A450A39A1FB6C65A0009CD02 /* BaseViewController.swift */,
+				A450A39B1FB6C65A0009CD02 /* NavigationViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		A450A3611FB6AC2F0009CD02 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A450A3621FB6AC2F0009CD02 /* Utily */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utily;
+			sourceTree = "<group>";
+		};
+		A450A3631FB6AC2F0009CD02 /* Macros */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Macros;
+			sourceTree = "<group>";
+		};
+		A450A3641FB6AC2F0009CD02 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A450A3651FB6AC2F0009CD02 /* Files */,
+				A450A3661FB6AC2F0009CD02 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A450A3651FB6AC2F0009CD02 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
+		A450A3661FB6AC2F0009CD02 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A450A3671FB6AC2F0009CD02 /* LaunchImages */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		A450A3671FB6AC2F0009CD02 /* LaunchImages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LaunchImages;
+			sourceTree = "<group>";
+		};
+		A450A3681FB6AC300009CD02 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				A450A3941FB6C64B0009CD02 /* BaseModel.swift */,
+				A450A3911FB6C64B0009CD02 /* BaseRequest.swift */,
+				A450A3921FB6C64B0009CD02 /* BaseViewController.swift */,
+				A450A3931FB6C64B0009CD02 /* NavigationViewController.swift */,
+				A450A3691FB6AC300009CD02 /* Categorys */,
+				A450A36F1FB6AC300009CD02 /* Favorite */,
+				A450A3751FB6AC300009CD02 /* Home */,
+				A450A37B1FB6AC300009CD02 /* Mine */,
+				A450A3811FB6AC300009CD02 /* Z-Me */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		A450A3691FB6AC300009CD02 /* Categorys */ = {
+			isa = PBXGroup;
+			children = (
+				A450A36A1FB6AC300009CD02 /* Helper */,
+				A450A36B1FB6AC300009CD02 /* Model */,
+				A450A36C1FB6AC300009CD02 /* RequestApi */,
+				A450A36D1FB6AC300009CD02 /* ViewController */,
+				A450A36E1FB6AC300009CD02 /* ViewModel */,
+			);
+			path = Categorys;
+			sourceTree = "<group>";
+		};
+		A450A36A1FB6AC300009CD02 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		A450A36B1FB6AC300009CD02 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A450A36C1FB6AC300009CD02 /* RequestApi */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RequestApi;
+			sourceTree = "<group>";
+		};
+		A450A36D1FB6AC300009CD02 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A450A36E1FB6AC300009CD02 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A450A36F1FB6AC300009CD02 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				A450A3701FB6AC300009CD02 /* Helper */,
+				A450A3711FB6AC300009CD02 /* Model */,
+				A450A3721FB6AC300009CD02 /* RequestApi */,
+				A450A3731FB6AC300009CD02 /* ViewController */,
+				A450A3741FB6AC300009CD02 /* ViewModel */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		A450A3701FB6AC300009CD02 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		A450A3711FB6AC300009CD02 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A450A3721FB6AC300009CD02 /* RequestApi */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RequestApi;
+			sourceTree = "<group>";
+		};
+		A450A3731FB6AC300009CD02 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A450A3741FB6AC300009CD02 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A450A3751FB6AC300009CD02 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A450A3761FB6AC300009CD02 /* Helper */,
+				A450A3771FB6AC300009CD02 /* Model */,
+				A450A3781FB6AC300009CD02 /* RequestApi */,
+				A450A3791FB6AC300009CD02 /* ViewController */,
+				A450A37A1FB6AC300009CD02 /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A450A3761FB6AC300009CD02 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		A450A3771FB6AC300009CD02 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A450A3781FB6AC300009CD02 /* RequestApi */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RequestApi;
+			sourceTree = "<group>";
+		};
+		A450A3791FB6AC300009CD02 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A450A37A1FB6AC300009CD02 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A450A37B1FB6AC300009CD02 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				A450A37C1FB6AC300009CD02 /* Helper */,
+				A450A37D1FB6AC300009CD02 /* Model */,
+				A450A37E1FB6AC300009CD02 /* RequestApi */,
+				A450A37F1FB6AC300009CD02 /* ViewController */,
+				A450A3801FB6AC300009CD02 /* ViewModel */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		A450A37C1FB6AC300009CD02 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		A450A37D1FB6AC300009CD02 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A450A37E1FB6AC300009CD02 /* RequestApi */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RequestApi;
+			sourceTree = "<group>";
+		};
+		A450A37F1FB6AC300009CD02 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A450A3801FB6AC300009CD02 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A450A3811FB6AC300009CD02 /* Z-Me */ = {
+			isa = PBXGroup;
+			children = (
+				A450A3821FB6AC300009CD02 /* Helper */,
+				A450A3831FB6AC300009CD02 /* Model */,
+				A450A3841FB6AC300009CD02 /* RequestApi */,
+				A450A3851FB6AC300009CD02 /* ViewController */,
+				A450A3861FB6AC300009CD02 /* ViewModel */,
+			);
+			path = "Z-Me";
+			sourceTree = "<group>";
+		};
+		A450A3821FB6AC300009CD02 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		A450A3831FB6AC300009CD02 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A450A3841FB6AC300009CD02 /* RequestApi */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RequestApi;
+			sourceTree = "<group>";
+		};
+		A450A3851FB6AC300009CD02 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A450A3861FB6AC300009CD02 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A450A3871FB6AC300009CD02 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A450A3881FB6AC300009CD02 /* Helper */,
+				A450A3891FB6AC300009CD02 /* Model */,
+				A450A38A1FB6AC300009CD02 /* RequestApi */,
+				A450A38B1FB6AC300009CD02 /* ViewController */,
+				A450A38C1FB6AC300009CD02 /* ViewModel */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		A450A3881FB6AC300009CD02 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		A450A3891FB6AC300009CD02 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A450A38A1FB6AC300009CD02 /* RequestApi */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RequestApi;
+			sourceTree = "<group>";
+		};
+		A450A38B1FB6AC300009CD02 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A450A38C1FB6AC300009CD02 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A450A33B1FB6ABFB0009CD02 /* Zaful */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A450A3591FB6ABFC0009CD02 /* Build configuration list for PBXNativeTarget "Zaful" */;
+			buildPhases = (
+				5BE6E2FDD8DCC44456CC8417 /* [CP] Check Pods Manifest.lock */,
+				A450A3381FB6ABFB0009CD02 /* Sources */,
+				A450A3391FB6ABFB0009CD02 /* Frameworks */,
+				A450A33A1FB6ABFB0009CD02 /* Resources */,
+				54E9F4CDCCD8856BA36C0028 /* [CP] Embed Pods Frameworks */,
+				04762095ED2F1DAF0182398A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Zaful;
+			productName = Zaful;
+			productReference = A450A33C1FB6ABFB0009CD02 /* Zaful.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A450A34F1FB6ABFC0009CD02 /* ZafulTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A450A35C1FB6ABFC0009CD02 /* Build configuration list for PBXNativeTarget "ZafulTests" */;
+			buildPhases = (
+				A450A34C1FB6ABFC0009CD02 /* Sources */,
+				A450A34D1FB6ABFC0009CD02 /* Frameworks */,
+				A450A34E1FB6ABFC0009CD02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A450A3521FB6ABFC0009CD02 /* PBXTargetDependency */,
+			);
+			name = ZafulTests;
+			productName = ZafulTests;
+			productReference = A450A3501FB6ABFC0009CD02 /* ZafulTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A450A3341FB6ABFB0009CD02 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = karl.luo;
+				TargetAttributes = {
+					A450A33B1FB6ABFB0009CD02 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					A450A34F1FB6ABFC0009CD02 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A450A33B1FB6ABFB0009CD02;
+					};
+				};
+			};
+			buildConfigurationList = A450A3371FB6ABFB0009CD02 /* Build configuration list for PBXProject "Zaful" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A450A3331FB6ABFB0009CD02;
+			productRefGroup = A450A33D1FB6ABFB0009CD02 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A450A33B1FB6ABFB0009CD02 /* Zaful */,
+				A450A34F1FB6ABFC0009CD02 /* ZafulTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A450A33A1FB6ABFB0009CD02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A450A34A1FB6ABFB0009CD02 /* LaunchScreen.storyboard in Resources */,
+				A450A3471FB6ABFB0009CD02 /* Assets.xcassets in Resources */,
+				A450A3451FB6ABFB0009CD02 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A450A34E1FB6ABFC0009CD02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04762095ED2F1DAF0182398A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Zaful/Pods-Zaful-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		54E9F4CDCCD8856BA36C0028 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Zaful/Pods-Zaful-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5BE6E2FDD8DCC44456CC8417 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A450A3381FB6ABFB0009CD02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A450A3981FB6C64B0009CD02 /* BaseModel.swift in Sources */,
+				A450A3421FB6ABFB0009CD02 /* ViewController.swift in Sources */,
+				A450A3961FB6C64B0009CD02 /* BaseViewController.swift in Sources */,
+				A450A39F1FB6C65A0009CD02 /* NavigationViewController.swift in Sources */,
+				A450A3A01FB6C65A0009CD02 /* BaseModel.swift in Sources */,
+				A450A39D1FB6C65A0009CD02 /* BaseRequest.swift in Sources */,
+				A450A3401FB6ABFB0009CD02 /* AppDelegate.swift in Sources */,
+				A450A39E1FB6C65A0009CD02 /* BaseViewController.swift in Sources */,
+				A450A3971FB6C64B0009CD02 /* NavigationViewController.swift in Sources */,
+				A450A3951FB6C64B0009CD02 /* BaseRequest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A450A34C1FB6ABFC0009CD02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A450A3551FB6ABFC0009CD02 /* ZafulTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A450A3521FB6ABFC0009CD02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A450A33B1FB6ABFB0009CD02 /* Zaful */;
+			targetProxy = A450A3511FB6ABFC0009CD02 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A450A3431FB6ABFB0009CD02 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A450A3441FB6ABFB0009CD02 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A450A3481FB6ABFB0009CD02 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A450A3491FB6ABFB0009CD02 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A450A3571FB6ABFC0009CD02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A450A3581FB6ABFC0009CD02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A450A35A1FB6ABFC0009CD02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3B69D570B41B775739DEAEF /* Pods-Zaful.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3Y845XRY6W;
+				INFOPLIST_FILE = Zaful/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.globalegrow.Zaful;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A450A35B1FB6ABFC0009CD02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCC6DC4C6D0CA74235FC90F0 /* Pods-Zaful.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3Y845XRY6W;
+				INFOPLIST_FILE = Zaful/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.globalegrow.Zaful;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A450A35D1FB6ABFC0009CD02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3Y845XRY6W;
+				INFOPLIST_FILE = ZafulTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.globalegrow.ZafulTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zaful.app/Zaful";
+			};
+			name = Debug;
+		};
+		A450A35E1FB6ABFC0009CD02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3Y845XRY6W;
+				INFOPLIST_FILE = ZafulTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.globalegrow.ZafulTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zaful.app/Zaful";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A450A3371FB6ABFB0009CD02 /* Build configuration list for PBXProject "Zaful" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A450A3571FB6ABFC0009CD02 /* Debug */,
+				A450A3581FB6ABFC0009CD02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A450A3591FB6ABFC0009CD02 /* Build configuration list for PBXNativeTarget "Zaful" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A450A35A1FB6ABFC0009CD02 /* Debug */,
+				A450A35B1FB6ABFC0009CD02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A450A35C1FB6ABFC0009CD02 /* Build configuration list for PBXNativeTarget "ZafulTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A450A35D1FB6ABFC0009CD02 /* Debug */,
+				A450A35E1FB6ABFC0009CD02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A450A3341FB6ABFB0009CD02 /* Project object */;
+}
