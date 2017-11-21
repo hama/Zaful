@@ -1,60 +1,70 @@
 PODS:
   - Alamofire (4.5.1)
-  - DKImagePickerController (3.8.0):
-    - DKImagePickerController/Camera (= 3.8.0)
-    - DKImagePickerController/ImageManager (= 3.8.0)
-  - DKImagePickerController/Camera (3.8.0)
-  - DKImagePickerController/ImageManager (3.8.0)
-  - EasyTipView (1.0.2)
-  - ESPullToRefresh (2.6)
-  - Hero (0.3.6)
-  - ImageViewer (5.0.0)
+  - ESPullToRefresh (2.7)
+  - ESTabBarController-swift (2.5)
+  - Firebase/Core (4.6.0):
+    - FirebaseAnalytics (= 4.0.5)
+    - FirebaseCore (= 4.0.11)
+  - FirebaseAnalytics (4.0.5):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - nanopb (~> 0.3)
+  - FirebaseCore (4.0.11):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseInstanceID (2.0.6)
+  - GoogleToolboxForMac/Defines (2.1.3)
+  - GoogleToolboxForMac/NSData+zlib (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - Hero (1.0.0)
   - KeychainAccess (3.1.0)
-  - Kingfisher (4.1.0)
-  - PageMenu (2.0.0)
-  - RxSwift (3.6.1)
+  - Kingfisher (4.2.0)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
+  - RxSwift (4.0.0)
   - SKPhotoBrowser (5.0.0)
   - SnapKit (4.0.0)
   - SQLite.swift (0.11.4):
     - SQLite.swift/standard (= 0.11.4)
   - SQLite.swift/standard (0.11.4)
-  - SwiftyJSON (3.1.4)
-  - TagListView (1.3.0)
+  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
   - Alamofire
-  - DKImagePickerController
-  - EasyTipView
   - ESPullToRefresh
+  - ESTabBarController-swift
+  - Firebase/Core
   - Hero
-  - ImageViewer
   - KeychainAccess
   - Kingfisher
-  - PageMenu
   - RxSwift
   - SKPhotoBrowser
   - SnapKit
   - SQLite.swift
   - SwiftyJSON
-  - TagListView
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  DKImagePickerController: 6eea9f1ba2e2ca0ba0317b81d68152d07d9e877f
-  EasyTipView: b93a19be981cc2221d6d7191d49872f547e0bebf
-  ESPullToRefresh: 85f4990acf87f78c6a1466bbbee7a75d7de24db9
-  Hero: d3c6f4dd80cdcdbb339be64e57ae3b5c3ab9938c
-  ImageViewer: 3def6e39c6979ce3e9d001c78eec0d8b895f2f73
+  ESPullToRefresh: 119e2710b82b75536aab2bbe4883ba119fca35c8
+  ESTabBarController-swift: 8daa432f2a9be8ebd25101dc46c84472fd760512
+  Firebase: 27321a925aa85520618255a7c630859e0502ccbd
+  FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
+  FirebaseCore: 2a946ece8fbe3ce1fdeeb55324f273caade22df9
+  FirebaseInstanceID: 24958382a1011bba5aaff37e334e7a650b9118f5
+  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
+  Hero: 18e7cf8af41c04c8532d1430ac174004a9365c87
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
-  Kingfisher: f14df8cbe576bf55f211fa589e9869bceb4ea87d
-  PageMenu: 9c38fd7e0d9ef4b1408320f55bb907bbc0e538dc
-  RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
+  Kingfisher: 9ee7e788d8ba07c3f21ce0d43f33cec310a4f781
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
   SKPhotoBrowser: fe936f878955a568c726bf05d14e1d2717d91ce0
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SQLite.swift: 3e3bee21da701b5b9f87c4a672cb54f233505692
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
-  TagListView: 669f7d4455003c877655875d34829731c4191528
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 111db4de2ceeb34716683ca8a08daac66ada1d0c
+PODFILE CHECKSUM: f1cda8c7ea97c1fa00bc51403f7d96436ebb6d58
 
 COCOAPODS: 1.2.1.beta.1

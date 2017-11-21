@@ -10,17 +10,19 @@ import UIKit
 
 /// 登录协议，默认都是需要登录
 protocol IsLoginProtocal {
-    
     func isNeedLogin() -> Bool
 }
 
-class BaseViewController: UIViewController {
+class BaseViewController: UIViewController, IsLoginProtocal {
+    
+    func isNeedLogin() -> Bool {
+        return false
+    }
     
     weak var networkNoticeView: UIView?
     
     //MARK: life circle
     deinit {
-        
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -34,33 +36,16 @@ class BaseViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         super.viewWillAppear(animated)
-        moveTabbarSubView()
-    }
-    
-    func moveTabbarSubView() -> Void {
-        
-        if self.tabBarController != nil {
-    
-            for subView:UIView in (self.tabBarController?.tabBar.subviews)! {
-                
-                if !(subView is TabBar) {
-                    
-                    subView.removeFromSuperview();
-                }
-            }
-        }
     }
     
     //MARK: event response
-    func backAction() -> Void {
+    @objc func backAction() -> Void {
         
         navigationController?.popViewController(animated: true)
     }
     
-    func networkDidChange(_ notificate: Notification) -> Void {
-    
+    @objc func networkDidChange(_ notificate: Notification) -> Void {
         networkNoticeView?.isHidden = (notificate.object as! Bool)
     }
     
@@ -73,9 +58,7 @@ class BaseViewController: UIViewController {
     
     //MARK: init subview
     private func initNavLeftItem() -> Void {
-        
         guard navigationController != nil && (navigationController?.viewControllers.count)! > 1 else {
-            
             return
         }
         
@@ -123,13 +106,5 @@ class BaseViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-}
-
-extension BaseViewController: IsLoginProtocal {
-    
-    func isNeedLogin() -> Bool {
-        
-        return true
     }
 }

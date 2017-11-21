@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var mainTabBarController: MainTabBarController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.backgroundColor = UIColor.white
+        window?.makeKeyAndVisible()
+        
+        rootViewControllerWithTabbarController()
         return true
     }
 
@@ -40,7 +46,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+}
 
-
+//MARK: AppDelegate 逻辑操作
+extension AppDelegate {
+    
+    /// 设置根 VC
+    func rootViewControllerWithTabbarController() -> Void {
+        mainTabBarController                = MainTabBarController()
+        window?.rootViewController          = mainTabBarController
+        mainTabBarController?.selectedIndex = TabbarItemIndex.home.rawValue
+    }
 }
 

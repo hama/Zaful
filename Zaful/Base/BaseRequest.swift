@@ -74,8 +74,7 @@ class BaseRequest: NSObject, RequestMethod {
             parames?["token"] = token
         }
         
-        let sign = BaseRequest().secretParames(parames)
-        parames?["sign"]      = sign
+        parames?["sign"]      = ""
         
         BaseRequest.share.manger?.request(url,
                                           method: method,
@@ -92,42 +91,5 @@ class BaseRequest: NSObject, RequestMethod {
                     completeFailure(response.error!)
                 }
         }
-    }
-    
-    func MD5(string: String) -> String {
-        
-        let messageData = string.data(using:.utf8)!
-        var digestData  = Data(count: Int(CC_MD5_DIGEST_LENGTH))
-        
-        _ = digestData.withUnsafeMutableBytes {digestBytes in
-            messageData.withUnsafeBytes {messageBytes in
-                CC_MD5(messageBytes, CC_LONG(messageData.count), digestBytes)
-            }
-        }
-        
-        var sign = digestData.map { String(format: "%02hhx", $0) }.joined()
-        sign = sign.lowercased()
-        return sign
-    }
-    
-    func secretParames(_ parames: Parameters?) -> String {
-    
-        let paramesDict: [String: String] = parames as! [String : String]
-        let allkeys = paramesDict.keys
-        var sign = ""
-        
-        let newKeys = allkeys.sorted(by: { (string1: String, string2: String) -> Bool in
-            
-            return string1.compare(string2, options: .backwards, range: nil, locale: nil) == .orderedAscending
-        })
-        
-        for key in newKeys {
-            
-            sign = sign.appending(paramesDict[key]!)
-        }
-        
-        sign = self.MD5(string: sign)
-        
-        return sign
     }
 }
