@@ -12,31 +12,38 @@ import UIKit
 fileprivate let kHost       = "kHost"
 fileprivate let kTest       = "kTest"
 fileprivate let kPreRelease = "kPreRelease"
+fileprivate let kTrunk      = "kTrunk"
 
-extension NSString {
-    
-    /// 请求链接基础
-    ///
-    /// - Parameter isNewInterface: 是否是新接口
-    /// - Returns: 请求链接
-    class func my_baseUrl(isNewInterface: Bool) -> String {
-    
-        let baseUrl: String = NSString.my_rootUrl()
-        return baseUrl
-    }
+extension String {
     
     /// 网络请求的根路径
     ///
     /// - Returns: 请求链接
-    class func my_rootUrl() -> String {
-    
-        var rootUrl: String = ""
-
+    static func rootURL() -> String {
+        var rootUrl: String = self.hostURL()
+        let userDefault = UserDefaults.standard
         
-//        rootUrl = "http://page.miyanmz.hqygou.com"     // 正式环境
-//        rootUrl = "http://gray.page.miyanmz.com"       // 灰度环境
-        rootUrl = "http://api.miyanmz.hqygou.com"        // 测试环境
+        rootUrl = userDefault.bool(forKey: kHost) ? self.hostURL() : rootUrl
+        rootUrl = userDefault.bool(forKey: kTest) ? self.testURL() : rootUrl
+        rootUrl = userDefault.bool(forKey: kPreRelease) ? self.preReleaseURL() : rootUrl
+        rootUrl = userDefault.bool(forKey: kTrunk) ? self.trunkURL() : rootUrl
         
         return rootUrl
+    }
+    
+    static func hostURL() -> String {
+        return "https://app.zaful.com/api_ios/"
+    }
+    
+    static func preReleaseURL() -> String {
+        return "https://app.zaful.com/api_ios/"
+    }
+    
+    static func testURL() -> String {
+        return "http://app-zaful.com.a.s1.egomsl.com/api_ios/"
+    }
+    
+    static func trunkURL() -> String {
+        return "http://app-zaful.com.trunk.s1.egomsl.com/api_ios/"
     }
 }

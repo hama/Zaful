@@ -17,9 +17,9 @@ target 'Zaful' do
 #    pod 'DKImagePickerController'
     pod 'ESTabBarController-swift' # 自定义tabBar
     pod 'RxSwift'
-   # pod 'Bond' # RxSwift 数据绑定或响应式编程
-#    pod 'EasyTipView' # 气泡提示
-#    pod 'TagListView' # 标签组
+    pod 'Moya'           # 网络请求封装库
+    pod 'ObjectMapper'   # model 解析
+    pod 'PromiseKit'     # 异步编程
     pod 'Firebase/Core'
 
 end

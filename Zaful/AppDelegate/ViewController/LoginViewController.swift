@@ -9,9 +9,16 @@
 import UIKit
 
 class LoginViewController: BaseViewController {
-
+    var completeHandle: (() -> Void)?
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .red
+        let tagGesture = UITapGestureRecognizer(target: self, action: #selector(disMiss))
+        view.addGestureRecognizer(tagGesture)
+    }
+    
+    @objc func disMiss() -> Void {
+        dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
