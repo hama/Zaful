@@ -38,13 +38,11 @@ extension HomeRequest: TargetType {
     }
     
     var task: Task {
-        var parameters: [String : Any] = ["lang" : "en", "version": APPMACROS_APP_VERSION!, "token": ""]
-        var isEnc = false
+        var parameters = RequestCommonParameters.parameters()
         switch self {
         case .homeMenu:
-            isEnc = false
             parameters["action"] = "channel/get_channel_list"
-            parameters["is_enc"] = String(isEnc)
+            QHLog("请求URL: \(self.baseURL) \n 请求参数：\(parameters)")
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         }
     }

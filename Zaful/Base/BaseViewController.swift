@@ -41,7 +41,6 @@ class BaseViewController: UIViewController, IsLoginProtocal {
     
     //MARK: event response
     @objc func backAction() -> Void {
-        
         navigationController?.popViewController(animated: true)
     }
     
@@ -51,7 +50,6 @@ class BaseViewController: UIViewController, IsLoginProtocal {
     
     //MARK:add notification
     func addNotificate() {
-    
         let notification = Notification.Name(rawValue: NOTIFICATIONMACROS_NETWORK_MONITOR)
         NotificationCenter.default.addObserver(self, selector: #selector(networkDidChange(_:)), name: notification, object: nil)
     }
@@ -81,9 +79,7 @@ class BaseViewController: UIViewController, IsLoginProtocal {
     }
     
     private func initNetworkNoticeView() {
-    
         if networkNoticeView == nil {
-            
             let noticeView      = UIView()
             noticeView.isHidden = true
             noticeView.qh_height(30.0)

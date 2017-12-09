@@ -29,4 +29,18 @@ extension UIImage {
         
         return image
     }
+    
+    func qh_imageWithGradientTintColor(color: UIColor) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        color.setFill()
+        let bounds = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
+        UIRectFill(bounds)
+        draw(in: bounds, blendMode: .overlay, alpha: 1.0)
+        draw(in: bounds, blendMode: .destinationIn, alpha: 1.0)
+        
+        let tintedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return tintedImage!
+    }
 }

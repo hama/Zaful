@@ -7,7 +7,7 @@ target 'Zaful' do
     pod 'Alamofire' # 网络请求
     pod 'Kingfisher' # 图片加载
     pod 'SnapKit' # 自动布局封装
-#    pod 'PageMenu' # tab菜单 PagingMenuController / pod 'SwipeMenuViewController'
+    pod 'PageMenu' # tab菜单 PagingMenuController / pod 'SwipeMenuViewController'
     pod 'SQLite.swift' # 数据库操作
     pod 'Hero' # VC跳转动画
     pod 'ESPullToRefresh' # 下拉刷新
@@ -16,10 +16,10 @@ target 'Zaful' do
     pod 'SwiftyJSON' # json解析
 #    pod 'DKImagePickerController'
     pod 'ESTabBarController-swift' # 自定义tabBar
-    pod 'RxSwift'
+    #    pod 'RxSwift'
     pod 'Moya'           # 网络请求封装库
     pod 'ObjectMapper'   # model 解析
-    pod 'PromiseKit'     # 异步编程
+    #    pod 'PromiseKit'     # 异步编程
     pod 'Firebase/Core'
 
 end

@@ -25,13 +25,4 @@ final class HomeMenuModel: Mappable {
         menuTitle <- map["channel_title"]
         jumbType <- map["jump_type"]
     }
-    
-    func requestCompleteHandle(completeHandle:(_ message: String, _ isSuccess: Bool) -> Void) -> Void {
-        let homeRequest = MoyaProvider<HomeRequest>()
-        homeRequest.request(.homeMenu) { result in
-            switch result {
-//                case let .suc
-            }
-        }
-    }
 }

@@ -50,6 +50,11 @@
 		A4B882301FC2EBDC00B460EF /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B8822F1FC2EBDC00B460EF /* MineViewController.swift */; };
 		A4B882321FC2EBFF00B460EF /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B882311FC2EBFF00B460EF /* CommunityViewController.swift */; };
 		A4B882341FC2F53100B460EF /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B882331FC2F53100B460EF /* MainTabBarController.swift */; };
+		A4B993041FDB865A0001DF38 /* RequestCommonParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B993031FDB865A0001DF38 /* RequestCommonParameters.swift */; };
+		A4B993081FDB89780001DF38 /* HomeMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B993071FDB89780001DF38 /* HomeMenuViewModel.swift */; };
+		A4B9930A1FDBC9760001DF38 /* LoginMannager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B993091FDBC9750001DF38 /* LoginMannager.swift */; };
+		A4B9930C1FDBD6180001DF38 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9930B1FDBD6180001DF38 /* ChannelViewController.swift */; };
+		A4B9930E1FDBD9FD0001DF38 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9930D1FDBD9FD0001DF38 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +114,11 @@
 		A4B8822F1FC2EBDC00B460EF /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		A4B882311FC2EBFF00B460EF /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		A4B882331FC2F53100B460EF /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		A4B993031FDB865A0001DF38 /* RequestCommonParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCommonParameters.swift; sourceTree = "<group>"; };
+		A4B993071FDB89780001DF38 /* HomeMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewModel.swift; sourceTree = "<group>"; };
+		A4B993091FDBC9750001DF38 /* LoginMannager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginMannager.swift; sourceTree = "<group>"; };
+		A4B9930B1FDBD6180001DF38 /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
+		A4B9930D1FDBD9FD0001DF38 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ED1ADAFEF07EB14F2295CD9D /* Pods_Zaful.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zaful.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B69D570B41B775739DEAEF /* Pods-Zaful.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zaful.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zaful/Pods-Zaful.debug.xcconfig"; sourceTree = "<group>"; };
 		FCC6DC4C6D0CA74235FC90F0 /* Pods-Zaful.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zaful.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zaful/Pods-Zaful.release.xcconfig"; sourceTree = "<group>"; };
@@ -211,6 +221,7 @@
 			children = (
 				A450A39A1FB6C65A0009CD02 /* BaseViewController.swift */,
 				A450A39B1FB6C65A0009CD02 /* NavigationViewController.swift */,
+				A4B993031FDB865A0001DF38 /* RequestCommonParameters.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -435,6 +446,8 @@
 			isa = PBXGroup;
 			children = (
 				A4B8822D1FC2E85100B460EF /* HomeMainViewController.swift */,
+				A4B9930B1FDBD6180001DF38 /* ChannelViewController.swift */,
+				A4B9930D1FDBD9FD0001DF38 /* HomeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -442,6 +455,7 @@
 		A450A37A1FB6AC300009CD02 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A4B993071FDB89780001DF38 /* HomeMenuViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -560,6 +574,7 @@
 		A450A3881FB6AC300009CD02 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				A4B993091FDBC9750001DF38 /* LoginMannager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -813,9 +828,42 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Zaful/Pods-Zaful-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ESPullToRefresh/ESPullToRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PageMenu/PageMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESPullToRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PageMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -828,13 +876,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Zaful-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -847,12 +898,15 @@
 				A4B882171FC2E25000B460EF /* AppMacros.swift in Sources */,
 				A4B882061FC2E22C00B460EF /* LoopCollectionViewCell.swift in Sources */,
 				A48AF0761FC6F06400790932 /* HomeRequest.swift in Sources */,
+				A4B9930E1FDBD9FD0001DF38 /* HomeViewController.swift in Sources */,
 				A4B8821A1FC2E25000B460EF /* NotificationMacros.swift in Sources */,
 				A4B882301FC2EBDC00B460EF /* MineViewController.swift in Sources */,
 				A450A39F1FB6C65A0009CD02 /* NavigationViewController.swift in Sources */,
+				A4B993041FDB865A0001DF38 /* RequestCommonParameters.swift in Sources */,
 				A4B882041FC2E22C00B460EF /* AlertView.swift in Sources */,
 				A48AF0711FC6EDEB00790932 /* TabbarBasicContentView.swift in Sources */,
 				A4B882071FC2E22C00B460EF /* LoopScrollView.swift in Sources */,
+				A4B9930C1FDBD6180001DF38 /* ChannelViewController.swift in Sources */,
 				A4B882321FC2EBFF00B460EF /* CommunityViewController.swift in Sources */,
 				A4B882101FC2E22C00B460EF /* RefreshStyle.swift in Sources */,
 				A4B882281FC2E28A00B460EF /* NSStringSizeExtention.swift in Sources */,
@@ -865,6 +919,7 @@
 				A4B882181FC2E25000B460EF /* BusinessEnumMacros.swift in Sources */,
 				A4B882261FC2E28A00B460EF /* UIViewFrameLayoutExtention.swift in Sources */,
 				A4B8822E1FC2E85100B460EF /* HomeMainViewController.swift in Sources */,
+				A4B993081FDB89780001DF38 /* HomeMenuViewModel.swift in Sources */,
 				A450A39E1FB6C65A0009CD02 /* BaseViewController.swift in Sources */,
 				A4B882221FC2E28A00B460EF /* NSStringMYURLExtention.swift in Sources */,
 				A4B8820E1FC2E22C00B460EF /* ProgressHub.swift in Sources */,
@@ -873,6 +928,7 @@
 				A4B8822A1FC2E7C800B460EF /* CategorysViewController.swift in Sources */,
 				A4B8822C1FC2E80000B460EF /* FavoriteViewController.swift in Sources */,
 				A4B882241FC2E28A00B460EF /* UIColorConvertExtention.swift in Sources */,
+				A4B9930A1FDBC9760001DF38 /* LoginMannager.swift in Sources */,
 				A4627CD61FC7B23200A714FA /* HomeMenuModel.swift in Sources */,
 				A4B882231FC2E28A00B460EF /* StringValidateExtention.swift in Sources */,
 				A4B8820B1FC2E22C00B460EF /* UIView+EmptyView.swift in Sources */,
@@ -1029,15 +1085,16 @@
 			baseConfigurationReference = F3B69D570B41B775739DEAEF /* Pods-Zaful.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Y845XRY6W;
 				INFOPLIST_FILE = Zaful/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zaful.ZafulSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1046,15 +1103,16 @@
 			baseConfigurationReference = FCC6DC4C6D0CA74235FC90F0 /* Pods-Zaful.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Y845XRY6W;
 				INFOPLIST_FILE = Zaful/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zaful.ZafulSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

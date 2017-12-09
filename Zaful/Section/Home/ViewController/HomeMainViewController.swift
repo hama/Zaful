@@ -7,29 +7,32 @@
 //
 
 import UIKit
+import PageMenu
 
 /// 首页
 class HomeMainViewController: BaseViewController {
 
+    let viewModel = HomeMenuViewModel()
+    var pageMenu: CAPSPageMenu?
+    var menuViewControllers: [BaseViewController]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Home"
+        requestData()
     }
+    
+    // MARK: 网络请求
+    private func requestData() {
+        ProgressHub.show()
+        viewModel.requestCompleteHandle {
+            ProgressHub.dismiss()
+        }
+    }
+    
+    // MARK: private method
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

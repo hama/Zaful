@@ -14,17 +14,18 @@ final class ProgressHub: NSObject {
     private let margin:CGFloat = 15.0
     
     private var backgroundView:UIView?
-    private var logoImageView:UIImageView = UIImageView()
-    private var pinkImageView:UIImageView = UIImageView()
+    private var logoImageView:UIImageView         = UIImageView()
+    private var pinkLayer: CAShapeLayer           = CAShapeLayer()
+    private var pinkBackgroundLayer: CAShapeLayer = CAShapeLayer()
     
     private var tipBackgrountView:UIView?
     private var containerView:UIView = UIView()
     private var tipLabel:UILabel     = UILabel()
+    private var logoImage: UIImage   = UIImage(named: "loading_image_center")!
+    private var pinkColor            = UIColor.black
     
-    private static var shared: ProgressHub {
-        
+    static var shared: ProgressHub {
         struct Static {
-            
             static let instance: ProgressHub = ProgressHub()
         }
         return Static.instance
@@ -34,18 +35,24 @@ final class ProgressHub: NSObject {
     }
     
     deinit {
+        ProgressHub.shared.pinkLayer.removeAllAnimations()
+    }
+    
+    /// 设置加载logo
+    func logoImage(_ image: UIImage) {
+        logoImage = image;
+    }
+    
+    func pinkColor(_ pinkColor: UIColor) {
         
-        ProgressHub.shared.pinkImageView.layer.removeAllAnimations()
     }
     
     /// 展示加载
     class func show() -> Void {
-        
         if ProgressHub.shared.backgroundView == nil {
-            
             ProgressHub.shared.initBackgrounView()
         }
-        UIApplication.shared.windows.last?.addSubview(ProgressHub.shared.backgroundView!)
+        UIApplication.shared.keyWindow!.addSubview(ProgressHub.shared.backgroundView!)
         ProgressHub.shared.addPinkAnimation()
     }
     
@@ -53,9 +60,7 @@ final class ProgressHub: NSObject {
     ///
     /// - Parameter statusString: 提示内容
     class func showStatus(statusString: String) -> Void {
-        
         if ProgressHub.shared.backgroundView != nil {
-            
             ProgressHub.dismiss()
         }
         
@@ -64,7 +69,6 @@ final class ProgressHub: NSObject {
         }
         
         if ProgressHub.shared.tipBackgrountView == nil {
-            
             ProgressHub.shared.initTipBackgroundView()
         }
         
@@ -73,9 +77,7 @@ final class ProgressHub: NSObject {
     }
     
     class func dismiss() -> Void {
-        
         if ProgressHub.shared.backgroundView != nil {
-            
             ProgressHub.shared.backgroundView!.removeFromSuperview()
         }
     }
@@ -85,6 +87,7 @@ final class ProgressHub: NSObject {
         
         self.backgroundView        = UIView()
         self.backgroundView!.frame = UIScreen.main.bounds
+        self.backgroundView?.isUserInteractionEnabled = true
         
         self.initLogoImageView()
         self.initPinkImageView()
@@ -92,28 +95,35 @@ final class ProgressHub: NSObject {
     
     private func initLogoImageView() -> Void {
         
-        let imageWidth:CGFloat   = 24.0
+        let imageWidth:CGFloat   = 20.0
         self.logoImageView.frame = CGRect(x: (self.backgroundView!.frame.size.width - imageWidth) / 2,
                                           y: (self.backgroundView!.frame.size.height - imageWidth) / 2,
                                           width: imageWidth,
                                           height: imageWidth)
         self.logoImageView.backgroundColor = UIColor.clear
         self.logoImageView.clipsToBounds   = true
-        self.logoImageView.image           = UIImage.init(named: "loading_image_center")
+        self.logoImageView.image           = logoImage
+        self.logoImageView.layer.cornerRadius = imageWidth / 2;
         self.backgroundView!.addSubview(self.logoImageView)
     }
     
     private func initPinkImageView() -> Void {
         
-        let imageWidth:CGFloat   = 30.0
-        self.pinkImageView.frame = CGRect(x: (self.backgroundView!.frame.size.width - imageWidth) / 2,
-                                          y: (self.backgroundView!.frame.size.height - imageWidth) / 2,
-                                          width: imageWidth,
-                                          height: imageWidth)
-        self.pinkImageView.backgroundColor = UIColor.clear
-        self.pinkImageView.clipsToBounds   = true
-        self.pinkImageView.image           = UIImage.init(named: "loading_image_circle")
-        self.backgroundView!.addSubview(self.pinkImageView)
+        let width:CGFloat = logoImageView.frame.size.width + 4.0
+        
+        let circlePath = UIBezierPath()
+        circlePath.addArc(withCenter: CGPoint(x: (backgroundView?.frame.size.width)! / 2.0, y: (backgroundView?.frame.size.height)! / 2.0), radius: width / 2.0, startAngle: 0.0, endAngle: CGFloat(Double.pi * 2), clockwise: false)
+        pinkLayer.frame = CGRect(x: (self.backgroundView!.frame.size.width - width) / 2,
+                                                    y: (self.backgroundView!.frame.size.height - width) / 2,
+                                                    width: width,
+                                                    height: width)
+        pinkLayer.fillColor       = UIColor.clear.cgColor
+        pinkLayer.path            = circlePath.cgPath
+        pinkLayer.strokeColor     = pinkColor.cgColor
+        pinkLayer.lineWidth       = 2.0
+        pinkLayer.strokeStart     = 0.0
+        pinkLayer.strokeEnd       = 0.55
+        self.backgroundView!.layer.addSublayer(pinkLayer)
     }
     
     private func initTipBackgroundView() -> Void {
@@ -154,7 +164,7 @@ final class ProgressHub: NSObject {
         baseAnimation.duration       = 0.4
         baseAnimation.isRemovedOnCompletion = false
         
-        ProgressHub.shared.pinkImageView.layer.add(baseAnimation, forKey: nil)
+        ProgressHub.shared.pinkLayer.add(baseAnimation, forKey: nil)
     }
     
     private func showTipString(tipString: String) -> Void {

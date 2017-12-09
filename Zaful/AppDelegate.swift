@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white
         window?.makeKeyAndVisible()
         
+        configApp()
         rootViewControllerWithTabbarController()
         return true
     }
@@ -56,6 +57,11 @@ extension AppDelegate {
         mainTabBarController                = MainTabBarController()
         window?.rootViewController          = mainTabBarController
         mainTabBarController?.selectedIndex = TabbarItemIndex.home.rawValue
+    }
+    
+    /// APP 全局配置
+    func configApp() {
+        ProgressHub.shared.logoImage(UIImage(named: "hub_loading_logo")!)
     }
 }
 

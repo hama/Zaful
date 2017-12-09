@@ -42,7 +42,6 @@ extension UIButton {
         var titleEdgeInsets = UIEdgeInsets()
         
         switch imagePosition {
-            
         case .left:
             imageEdgeInsets = UIEdgeInsets(top: 0.0, left: -margin / 2.0, bottom: 0.0, right: margin / 2.0)
             titleEdgeInsets = UIEdgeInsets(top: 0.0, left: margin / 2.0, bottom: 0.0, right: -margin / 2.0)

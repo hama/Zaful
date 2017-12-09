@@ -50,16 +50,13 @@ class NavigationViewController: UINavigationController {
     /// - Parameter viewController: 要判断的VC
     func presentToLoginViewController(_ viewController: UIViewController) -> Bool {
         if viewController is BaseViewController {
-            let keyChain = Keychain(service: String.rootURL())
-            let token    = keyChain[APPMACROS_LOGINTOKEN_KEY]
-
             let currentViewController = viewController as! BaseViewController
-            if currentViewController.isNeedLogin() && token == nil {
+            if currentViewController.isNeedLogin()
+                && !LoginMannager.share.isLogin {
                 
-                let loginViewController:LoginViewController = LoginViewController()
-                let loginNavicationController:NavigationViewController = NavigationViewController(rootViewController: loginViewController)
+                let loginViewController: LoginViewController = LoginViewController()
+                let loginNavicationController: NavigationViewController = NavigationViewController(rootViewController: loginViewController)
                 navigationController?.present(loginNavicationController, animated: true, completion: nil)
-                
                 loginViewController.completeHandle = {
                     super.pushViewController(viewController, animated: true)
                 }

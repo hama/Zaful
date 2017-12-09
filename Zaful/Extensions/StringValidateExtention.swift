@@ -18,7 +18,6 @@ extension String {
     func isMobileNumber() -> Bool {
         
         guard self.characters.count > 0 else {
-        
             return false
         }
         let phoneRegex: String = "^((13[0-9])|(15[^4,\\D])|(18[0,0-9])|(17[0,0-9]))\\d{8}$"

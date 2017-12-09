@@ -11,11 +11,6 @@
 import Foundation
 import UIKit
 
-/************* 接口配置 *************/
-//let WZHAPPMACROS_MAIN_URL = "https://www.wzhouhui.egocdn.com/api/index.php" // 测试环境
-//let WZHAPPMACROS_MAIN_URL = "https://gray.www.wzhouhui.com/api/index.php" // 灰度环境
-let APPMACROS_MAIN_URL = "https://www.wzhouhui.com/api/index.php" // 正式环境
-
 let APPMACROS_APP_VERSION    = Bundle.main.infoDictionary?["CFBundleShortVersionString"] // APP版本
 let APPMACROS_LOGINTOKEN_KEY = "APPMACROS_LOGINTOKEN_KEY"                                // 保存登录token
 
