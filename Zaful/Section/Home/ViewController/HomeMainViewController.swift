@@ -7,16 +7,18 @@
 //
 
 import UIKit
-import PageMenu
+import XLPagerTabStrip
 
 /// 首页
-class HomeMainViewController: BaseViewController {
-
+class HomeMainViewController: BarPagerTabStripViewController {
+    // MARK: 变量
     let viewModel = HomeMenuViewModel()
-    var pageMenu: CAPSPageMenu?
-    var menuViewControllers: [BaseViewController]?
+    var menuViewControllers: [BaseViewController] = [HomeViewController()]
     
+    // MARK: 生命周期
     override func viewDidLoad() {
+        let menuColor = UIColor(red: 183.0 / 255.0, green: 96.0 / 255.0, blue: 42.0 / 255.0, alpha: 1.0)
+        settings.style.selectedBarBackgroundColor = menuColor
         super.viewDidLoad()
         title = "Home"
         requestData()
@@ -27,12 +29,47 @@ class HomeMainViewController: BaseViewController {
         ProgressHub.show()
         viewModel.requestCompleteHandle {
             ProgressHub.dismiss()
+            self.initPageMenu()
+            self.reloadPagerTabStripView()
         }
     }
     
-    // MARK: private method
+    // MARK: 私有方法
 
+    // MARK: 初始化视图
+    func initPageMenu() -> Void {
+        menuViewControllers.removeAll()
+        for menuModel in viewModel.menuModels {
+            if menuModel.jumbType!.count > 0 {
+                let virtulViewController   = VirtualCategoryViewController()
+                virtulViewController.title = menuModel.menuTitle
+                menuViewControllers.append(virtulViewController)
+            } else {
+                if menuModel.menuId == nil {
+                    let homeViewController   = HomeViewController()
+                    homeViewController.title = menuModel.menuTitle
+                    menuViewControllers.append(homeViewController)
+                } else {
+                    let channelViewController       = ChannelViewController()
+                    channelViewController.title     = menuModel.menuTitle
+                    channelViewController.channelId = menuModel.menuId!
+                    menuViewControllers.append(channelViewController)
+                }
+            }
+        }
+    }
+    
+    // MARK: - PagerTabStripDataSource
+    override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
+        return menuViewControllers
+    }
+    
+    override func reloadPagerTabStripView() {
+        super.reloadPagerTabStripView()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 }
+

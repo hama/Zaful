@@ -37,7 +37,10 @@ let APPMACROS_SUB2_TEXTCOLOR: UIColor = UIColor.qh_colorWithHex(hexColor: 0xcccc
 
 /************* 其他颜色 *************/
 let APPMACROS_LINECOLOR: UIColor       = UIColor.qh_colorWithHex(hexColor: 0xd8d8d8) // 分割线颜色
-let APPMACROS_MAINCOLOR: UIColor       = UIColor.qh_colorWithHex(hexColor: 0xff3574) // APP主调色
+let APPMACROS_MAINCOLOR: UIColor       = UIColor(red: 255.0 / 255.0,
+                                                 green: 168.0 / 255.0,
+                                                 blue: 0.0 / 255.0,
+                                                 alpha: 1.0)                         // APP主调色
 let APPMACROS_UNENBLECOLOR: UIColor    = UIColor.qh_colorWithHex(hexColor: 0xcccccc) // 不可操作时颜色
 let APPMACROS_MAIN_BACKGROUND: UIColor = UIColor(red: 247.0 / 255.0,
                                                  green: 248.0 / 255.0,

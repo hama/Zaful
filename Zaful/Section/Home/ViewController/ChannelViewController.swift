@@ -11,6 +11,7 @@ import UIKit
 /// 频道
 class ChannelViewController: BaseViewController {
     // MARK: 变量
+    var channelId: String = ""
     
     // MARK: 生命周期
     override func viewDidLoad() {

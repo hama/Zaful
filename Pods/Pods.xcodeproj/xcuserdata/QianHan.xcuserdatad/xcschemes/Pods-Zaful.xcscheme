@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B35F181EBAFCE7AB30C35C76E0C870B6"
+               BlueprintIdentifier = "1F8C0EB90332BBC5D3312EFAB7C79AEE"
                BuildableName = "Pods_Zaful.framework"
                BlueprintName = "Pods-Zaful"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B35F181EBAFCE7AB30C35C76E0C870B6"
+            BlueprintIdentifier = "1F8C0EB90332BBC5D3312EFAB7C79AEE"
             BuildableName = "Pods_Zaful.framework"
             BlueprintName = "Pods-Zaful"
             ReferencedContainer = "container:Pods.xcodeproj">

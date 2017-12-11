@@ -34,7 +34,7 @@ class MainTabBarController: ESTabBarController {
         childViewController(mineViewController, "Mine", UIImage(named: "tabbar_mine_normal")!, UIImage(named: "tabbar_mine_selected")!)
     }
     
-    private func childViewController(_ viewController: BaseViewController,
+    private func childViewController(_ viewController: UIViewController,
                                      _ title: String,
                                      _ normalImage: UIImage,
                                      _ selectedImage: UIImage) -> Void {

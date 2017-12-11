@@ -55,6 +55,7 @@
 		A4B9930A1FDBC9760001DF38 /* LoginMannager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B993091FDBC9750001DF38 /* LoginMannager.swift */; };
 		A4B9930C1FDBD6180001DF38 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9930B1FDBD6180001DF38 /* ChannelViewController.swift */; };
 		A4B9930E1FDBD9FD0001DF38 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9930D1FDBD9FD0001DF38 /* HomeViewController.swift */; };
+		A4B993101FDE5A0C0001DF38 /* VirtualCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9930F1FDE5A0C0001DF38 /* VirtualCategoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		A4B993091FDBC9750001DF38 /* LoginMannager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginMannager.swift; sourceTree = "<group>"; };
 		A4B9930B1FDBD6180001DF38 /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
 		A4B9930D1FDBD9FD0001DF38 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A4B9930F1FDE5A0C0001DF38 /* VirtualCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualCategoryViewController.swift; sourceTree = "<group>"; };
 		ED1ADAFEF07EB14F2295CD9D /* Pods_Zaful.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zaful.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B69D570B41B775739DEAEF /* Pods-Zaful.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zaful.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zaful/Pods-Zaful.debug.xcconfig"; sourceTree = "<group>"; };
 		FCC6DC4C6D0CA74235FC90F0 /* Pods-Zaful.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zaful.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zaful/Pods-Zaful.release.xcconfig"; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				A4B882291FC2E7C800B460EF /* CategorysViewController.swift */,
+				A4B9930F1FDE5A0C0001DF38 /* VirtualCategoryViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -838,12 +841,12 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/PageMenu/PageMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -857,12 +860,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PageMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -897,6 +900,7 @@
 			files = (
 				A4B882171FC2E25000B460EF /* AppMacros.swift in Sources */,
 				A4B882061FC2E22C00B460EF /* LoopCollectionViewCell.swift in Sources */,
+				A4B993101FDE5A0C0001DF38 /* VirtualCategoryViewController.swift in Sources */,
 				A48AF0761FC6F06400790932 /* HomeRequest.swift in Sources */,
 				A4B9930E1FDBD9FD0001DF38 /* HomeViewController.swift in Sources */,
 				A4B8821A1FC2E25000B460EF /* NotificationMacros.swift in Sources */,

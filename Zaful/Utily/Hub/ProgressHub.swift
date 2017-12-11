@@ -22,7 +22,7 @@ final class ProgressHub: NSObject {
     private var containerView:UIView = UIView()
     private var tipLabel:UILabel     = UILabel()
     private var logoImage: UIImage   = UIImage(named: "loading_image_center")!
-    private var pinkColor            = UIColor.black
+    private var pinkColor            = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
     
     static var shared: ProgressHub {
         struct Static {
@@ -44,7 +44,7 @@ final class ProgressHub: NSObject {
     }
     
     func pinkColor(_ pinkColor: UIColor) {
-        
+        self.pinkColor = pinkColor
     }
     
     /// 展示加载
@@ -95,7 +95,7 @@ final class ProgressHub: NSObject {
     
     private func initLogoImageView() -> Void {
         
-        let imageWidth:CGFloat   = 20.0
+        let imageWidth:CGFloat   = 16.0
         self.logoImageView.frame = CGRect(x: (self.backgroundView!.frame.size.width - imageWidth) / 2,
                                           y: (self.backgroundView!.frame.size.height - imageWidth) / 2,
                                           width: imageWidth,
@@ -112,17 +112,28 @@ final class ProgressHub: NSObject {
         let width:CGFloat = logoImageView.frame.size.width + 4.0
         
         let circlePath = UIBezierPath()
-        circlePath.addArc(withCenter: CGPoint(x: (backgroundView?.frame.size.width)! / 2.0, y: (backgroundView?.frame.size.height)! / 2.0), radius: width / 2.0, startAngle: 0.0, endAngle: CGFloat(Double.pi * 2), clockwise: false)
-        pinkLayer.frame = CGRect(x: (self.backgroundView!.frame.size.width - width) / 2,
-                                                    y: (self.backgroundView!.frame.size.height - width) / 2,
-                                                    width: width,
-                                                    height: width)
+        circlePath.addArc(withCenter: CGPoint(x: width / 2.0, y: width / 2.0), radius: width / 2.0, startAngle: 0.0, endAngle: CGFloat(Double.pi * 2), clockwise: false)
+        pinkBackgroundLayer.frame = CGRect(x: (self.backgroundView!.frame.size.width - width) / 2, y: (self.backgroundView!.frame.size.height - width) / 2, width: width, height: width)
+        pinkBackgroundLayer.fillColor = UIColor.clear.cgColor
+        pinkBackgroundLayer.path      = circlePath.cgPath
+        let colors: [CGFloat] = pinkColor.cgColor.components!
+        if colors.count >= 4 {
+            pinkBackgroundLayer.strokeColor = UIColor(red: colors[0], green: colors[1], blue: colors[2], alpha: 0.3).cgColor
+        } else {
+            pinkBackgroundLayer.strokeColor = UIColor(red: colors[0], green: colors[0], blue: colors[0], alpha: 0.3).cgColor
+        }
+        pinkBackgroundLayer.lineWidth   = 1.5
+        pinkBackgroundLayer.strokeStart = 0.0
+        pinkBackgroundLayer.strokeEnd   = 1.0
+        backgroundView?.layer.addSublayer(pinkBackgroundLayer)
+        
+        pinkLayer.frame = CGRect(x: (self.backgroundView!.frame.size.width - width) / 2, y: (self.backgroundView!.frame.size.height - width) / 2, width: width, height: width)
         pinkLayer.fillColor       = UIColor.clear.cgColor
         pinkLayer.path            = circlePath.cgPath
         pinkLayer.strokeColor     = pinkColor.cgColor
-        pinkLayer.lineWidth       = 2.0
+        pinkLayer.lineWidth       = 1.5
         pinkLayer.strokeStart     = 0.0
-        pinkLayer.strokeEnd       = 0.55
+        pinkLayer.strokeEnd       = 0.35
         self.backgroundView!.layer.addSublayer(pinkLayer)
     }
     
@@ -140,9 +151,9 @@ final class ProgressHub: NSObject {
         self.containerView.frame = CGRect.zero
         self.containerView.layer.cornerRadius  = 5.0
         self.containerView.layer.masksToBounds = true
-        self.containerView.center              = (ProgressHub.shared.tipBackgrountView?.center)!
-        ProgressHub.shared.containerView.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
-        ProgressHub.shared.tipBackgrountView?.addSubview(self.containerView)
+        self.containerView.center              = (tipBackgrountView?.center)!
+        containerView.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
+        tipBackgrountView?.addSubview(self.containerView)
     }
     
     private func initTipLabel() -> Void {
@@ -151,20 +162,53 @@ final class ProgressHub: NSObject {
         self.tipLabel.font          = UIFont.systemFont(ofSize: 14.0)
         self.tipLabel.textAlignment = NSTextAlignment.left
         self.tipLabel.numberOfLines = 0
-        ProgressHub.shared.containerView.addSubview(self.tipLabel)
+        containerView.addSubview(self.tipLabel)
     }
     
     private func addPinkAnimation() -> Void {
+        let timeFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         
         let baseAnimation:CABasicAnimation = CABasicAnimation.init(keyPath: "transform.rotation.z")
-        
         baseAnimation.fromValue      = NSNumber(value: 0.0)
         baseAnimation.toValue        = NSNumber(value: 2 * Double.pi)
         baseAnimation.repeatCount    = MAXFLOAT
-        baseAnimation.duration       = 0.4
-        baseAnimation.isRemovedOnCompletion = false
+        baseAnimation.duration       = 0.5
+        baseAnimation.timingFunction = timeFunction
+        pinkLayer.add(baseAnimation, forKey: "baseAnimation")
         
-        ProgressHub.shared.pinkLayer.add(baseAnimation, forKey: nil)
+//        let startAnimation: CABasicAnimation = CABasicAnimation(keyPath: "strokeStart")
+//        startAnimation.duration             = 0.8
+//        startAnimation.fromValue            = NSNumber(value: 0.0)
+//        startAnimation.toValue              = NSNumber(value: 0.25)
+//        startAnimation.timingFunction       = timeFunction;
+//
+//        let endAnimation: CABasicAnimation  = CABasicAnimation(keyPath: "strokeEnd")
+//        endAnimation.duration             = 0.8
+//        endAnimation.fromValue            = NSNumber(value: 0.0)
+//        endAnimation.toValue              = NSNumber(value: 1.0)
+//        endAnimation.timingFunction       = timeFunction;
+//
+//
+//        let startAnimation1: CABasicAnimation = CABasicAnimation(keyPath: "strokeStart")
+//        startAnimation1.duration             = 0.4
+//        startAnimation.beginTime             = 0.8
+//        startAnimation1.fromValue            = NSNumber(value: 0.25)
+//        startAnimation1.toValue              = NSNumber(value: 1.0)
+//        startAnimation1.timingFunction       = timeFunction;
+//
+//        let endAnimation1: CABasicAnimation  = CABasicAnimation(keyPath: "strokeEnd")
+//        endAnimation1.duration             = 0.4
+//        endAnimation1.beginTime            = 0.8
+//        endAnimation1.fromValue            = NSNumber(value: 1.0)
+//        endAnimation1.toValue              = NSNumber(value: 1.0)
+//        endAnimation1.timingFunction       = timeFunction;
+//
+//        let groupAnimaiton: CAAnimationGroup = CAAnimationGroup()
+//        groupAnimaiton.duration = 1.2
+//        groupAnimaiton.repeatCount = MAXFLOAT
+//        groupAnimaiton.animations  = [startAnimation, endAnimation, startAnimation1, endAnimation1]
+//
+//        pinkLayer.add(groupAnimaiton, forKey: "groupAnimaiton")
     }
     
     private func showTipString(tipString: String) -> Void {

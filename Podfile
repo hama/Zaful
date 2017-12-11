@@ -7,7 +7,7 @@ target 'Zaful' do
     pod 'Alamofire' # 网络请求
     pod 'Kingfisher' # 图片加载
     pod 'SnapKit' # 自动布局封装
-    pod 'PageMenu' # tab菜单 PagingMenuController / pod 'SwipeMenuViewController'
+    pod 'XLPagerTabStrip' #pod 'PageMenu' # tab菜单 PagingMenuController / pod 'SwipeMenuViewController'
     pod 'SQLite.swift' # 数据库操作
     pod 'Hero' # VC跳转动画
     pod 'ESPullToRefresh' # 下拉刷新
