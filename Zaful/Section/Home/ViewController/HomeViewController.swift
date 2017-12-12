@@ -7,13 +7,23 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 
-class HomeViewController: BaseViewController {
-
+class HomeViewController: BaseViewController, IndicatorInfoProvider {
+    // MARK: 变量
+    var channelTitle: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = channelTitle
     }
 
+    // MARK: IndicatorInfoProvider
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        let info: IndicatorInfo = IndicatorInfo(title: channelTitle)
+        return info
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

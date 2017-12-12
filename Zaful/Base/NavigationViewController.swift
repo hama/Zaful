@@ -44,7 +44,6 @@ class NavigationViewController: UINavigationController {
         super.didReceiveMemoryWarning()
     }
 
-
     /// 是否要先登录
     ///
     /// - Parameter viewController: 要判断的VC
@@ -53,7 +52,6 @@ class NavigationViewController: UINavigationController {
             let currentViewController = viewController as! BaseViewController
             if currentViewController.isNeedLogin()
                 && !LoginMannager.share.isLogin {
-                
                 let loginViewController: LoginViewController = LoginViewController()
                 let loginNavicationController: NavigationViewController = NavigationViewController(rootViewController: loginViewController)
                 navigationController?.present(loginNavicationController, animated: true, completion: nil)

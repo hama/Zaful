@@ -56,6 +56,8 @@
 		A4B9930C1FDBD6180001DF38 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9930B1FDBD6180001DF38 /* ChannelViewController.swift */; };
 		A4B9930E1FDBD9FD0001DF38 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9930D1FDBD9FD0001DF38 /* HomeViewController.swift */; };
 		A4B993101FDE5A0C0001DF38 /* VirtualCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9930F1FDE5A0C0001DF38 /* VirtualCategoryViewController.swift */; };
+		A4B993141FDF76EA0001DF38 /* ChannelMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B993131FDF76EA0001DF38 /* ChannelMenuView.swift */; };
+		A4B993221FDFB2220001DF38 /* InstanceViewsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B993211FDFB2220001DF38 /* InstanceViewsProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +123,8 @@
 		A4B9930B1FDBD6180001DF38 /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
 		A4B9930D1FDBD9FD0001DF38 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A4B9930F1FDE5A0C0001DF38 /* VirtualCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualCategoryViewController.swift; sourceTree = "<group>"; };
+		A4B993131FDF76EA0001DF38 /* ChannelMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelMenuView.swift; sourceTree = "<group>"; };
+		A4B993211FDFB2220001DF38 /* InstanceViewsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceViewsProtocol.swift; sourceTree = "<group>"; };
 		ED1ADAFEF07EB14F2295CD9D /* Pods_Zaful.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zaful.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B69D570B41B775739DEAEF /* Pods-Zaful.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zaful.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zaful/Pods-Zaful.debug.xcconfig"; sourceTree = "<group>"; };
 		FCC6DC4C6D0CA74235FC90F0 /* Pods-Zaful.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zaful.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zaful/Pods-Zaful.release.xcconfig"; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 				A450A39A1FB6C65A0009CD02 /* BaseViewController.swift */,
 				A450A39B1FB6C65A0009CD02 /* NavigationViewController.swift */,
 				A4B993031FDB865A0001DF38 /* RequestCommonParameters.swift */,
+				A4B993211FDFB2220001DF38 /* InstanceViewsProtocol.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -638,6 +643,7 @@
 		A48AF0681FC6ED6A00790932 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A4B993131FDF76EA0001DF38 /* ChannelMenuView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -925,6 +931,7 @@
 				A4B8822E1FC2E85100B460EF /* HomeMainViewController.swift in Sources */,
 				A4B993081FDB89780001DF38 /* HomeMenuViewModel.swift in Sources */,
 				A450A39E1FB6C65A0009CD02 /* BaseViewController.swift in Sources */,
+				A4B993221FDFB2220001DF38 /* InstanceViewsProtocol.swift in Sources */,
 				A4B882221FC2E28A00B460EF /* NSStringMYURLExtention.swift in Sources */,
 				A4B8820E1FC2E22C00B460EF /* ProgressHub.swift in Sources */,
 				A4B882161FC2E25000B460EF /* SystemMacros.swift in Sources */,
@@ -934,6 +941,7 @@
 				A4B882241FC2E28A00B460EF /* UIColorConvertExtention.swift in Sources */,
 				A4B9930A1FDBC9760001DF38 /* LoginMannager.swift in Sources */,
 				A4627CD61FC7B23200A714FA /* HomeMenuModel.swift in Sources */,
+				A4B993141FDF76EA0001DF38 /* ChannelMenuView.swift in Sources */,
 				A4B882231FC2E28A00B460EF /* StringValidateExtention.swift in Sources */,
 				A4B8820B1FC2E22C00B460EF /* UIView+EmptyView.swift in Sources */,
 			);

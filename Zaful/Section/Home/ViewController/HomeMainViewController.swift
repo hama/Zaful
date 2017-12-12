@@ -10,17 +10,40 @@ import UIKit
 import XLPagerTabStrip
 
 /// 首页
-class HomeMainViewController: BarPagerTabStripViewController {
+class HomeMainViewController: ButtonBarPagerTabStripViewController {
     // MARK: 变量
+    let expandWidth: CGFloat = 64.0
     let viewModel = HomeMenuViewModel()
-    var menuViewControllers: [BaseViewController] = [HomeViewController()]
+    var menuViewControllers: [BaseViewController] = [BaseViewController]()
+    var expandView: ChannelMenuView {
+        let expandView = ChannelMenuView()
+        return expandView
+    }
     
     // MARK: 生命周期
     override func viewDidLoad() {
+        self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
         let menuColor = UIColor(red: 183.0 / 255.0, green: 96.0 / 255.0, blue: 42.0 / 255.0, alpha: 1.0)
-        settings.style.selectedBarBackgroundColor = menuColor
+        settings.style.buttonBarItemFont            = APPMACROS_MAIN_FONT
+        settings.style.buttonBarItemTitleColor      = APPMACROS_MAIN_TEXTCOLOR
+        settings.style.buttonBarHeight              = 44.0
+        settings.style.buttonBarBackgroundColor     = .white
+        settings.style.buttonBarItemBackgroundColor = .white
+        settings.style.selectedBarHeight            = 1.5
+        settings.style.buttonBarRightContentInset   = expandWidth
+        
+        changeCurrentIndexProgressive = { [weak self] (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
+            guard changeCurrentIndex == true else { return }
+            oldCell?.label.textColor = APPMACROS_MAIN_TEXTCOLOR
+            newCell?.label.textColor = menuColor
+        }
+        
         super.viewDidLoad()
         title = "Home"
+        buttonBarView.selectedBar.backgroundColor = menuColor
+        buttonBarView.backgroundColor = .white
+        setupView()
+        layouterViews()
         requestData()
     }
     
@@ -29,7 +52,6 @@ class HomeMainViewController: BarPagerTabStripViewController {
         ProgressHub.show()
         viewModel.requestCompleteHandle {
             ProgressHub.dismiss()
-            self.initPageMenu()
             self.reloadPagerTabStripView()
         }
     }
@@ -39,6 +61,13 @@ class HomeMainViewController: BarPagerTabStripViewController {
     // MARK: 初始化视图
     func initPageMenu() -> Void {
         menuViewControllers.removeAll()
+        guard viewModel.menuModels.count > 0 else {
+            let homeViewController   = HomeViewController()
+            homeViewController.title = "Home"
+            menuViewControllers.append(homeViewController)
+            return;
+        }
+        
         for menuModel in viewModel.menuModels {
             if menuModel.jumbType!.count > 0 {
                 let virtulViewController   = VirtualCategoryViewController()
@@ -46,13 +75,13 @@ class HomeMainViewController: BarPagerTabStripViewController {
                 menuViewControllers.append(virtulViewController)
             } else {
                 if menuModel.menuId == nil {
-                    let homeViewController   = HomeViewController()
-                    homeViewController.title = menuModel.menuTitle
+                    let homeViewController          = HomeViewController()
+                    homeViewController.channelTitle = menuModel.menuTitle!
                     menuViewControllers.append(homeViewController)
                 } else {
-                    let channelViewController       = ChannelViewController()
-                    channelViewController.title     = menuModel.menuTitle
-                    channelViewController.channelId = menuModel.menuId!
+                    let channelViewController          = ChannelViewController()
+                    channelViewController.channelTitle = menuModel.menuTitle!
+                    channelViewController.channelId    = menuModel.menuId!
                     menuViewControllers.append(channelViewController)
                 }
             }
@@ -61,6 +90,7 @@ class HomeMainViewController: BarPagerTabStripViewController {
     
     // MARK: - PagerTabStripDataSource
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
+        initPageMenu()
         return menuViewControllers
     }
     
@@ -70,6 +100,22 @@ class HomeMainViewController: BarPagerTabStripViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+}
+
+extension HomeMainViewController: InstanceViewsProtocol {
+    func setupView() {
+        buttonBarView.addSubview(expandView)
+        buttonBarView.bringSubview(toFront: expandView)
+    }
+    
+    func layouterViews() {
+        expandView.snp.makeConstraints { (make) in
+            make.width.equalTo(expandWidth)
+            make.height.equalTo(settings.style.buttonBarHeight!)
+            make.trailing.equalTo(buttonBarView.snp.trailing)
+            make.bottom.equalTo(buttonBarView.snp.bottom)
+        }
     }
 }
 

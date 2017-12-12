@@ -7,15 +7,24 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 
 /// 频道
-class ChannelViewController: BaseViewController {
+class ChannelViewController: BaseViewController, IndicatorInfoProvider {
     // MARK: 变量
-    var channelId: String = ""
+    var channelId: String    = ""
+    var channelTitle: String = ""
     
     // MARK: 生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = channelTitle
+    }
+    
+    // MARK: IndicatorInfoProvider
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        let info: IndicatorInfo = IndicatorInfo(title: channelTitle)
+        return info
     }
 
     override func didReceiveMemoryWarning() {
