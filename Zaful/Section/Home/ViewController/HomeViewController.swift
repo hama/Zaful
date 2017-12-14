@@ -12,6 +12,7 @@ import XLPagerTabStrip
 class HomeViewController: BaseViewController, IndicatorInfoProvider {
     // MARK: 变量
     var channelTitle: String = ""
+    let box = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()

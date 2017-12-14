@@ -12,13 +12,8 @@ import XLPagerTabStrip
 /// 首页
 class HomeMainViewController: ButtonBarPagerTabStripViewController {
     // MARK: 变量
-    let expandWidth: CGFloat = 64.0
     let viewModel = HomeMenuViewModel()
     var menuViewControllers: [BaseViewController] = [BaseViewController]()
-    var expandView: ChannelMenuView {
-        let expandView = ChannelMenuView()
-        return expandView
-    }
     
     // MARK: 生命周期
     override func viewDidLoad() {
@@ -30,7 +25,8 @@ class HomeMainViewController: ButtonBarPagerTabStripViewController {
         settings.style.buttonBarBackgroundColor     = .white
         settings.style.buttonBarItemBackgroundColor = .white
         settings.style.selectedBarHeight            = 1.5
-        settings.style.buttonBarRightContentInset   = expandWidth
+        settings.style.buttonBarRightContentInset   = 10.0
+        settings.style.buttonBarLeftContentInset    = 10.0
         
         changeCurrentIndexProgressive = { [weak self] (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
             guard changeCurrentIndex == true else { return }
@@ -39,12 +35,13 @@ class HomeMainViewController: ButtonBarPagerTabStripViewController {
         }
         
         super.viewDidLoad()
-        title = "Home"
+        title = LocalizedString("home_title")
         buttonBarView.selectedBar.backgroundColor = menuColor
         buttonBarView.backgroundColor = .white
         setupView()
         layouterViews()
         requestData()
+        
     }
     
     // MARK: 网络请求
@@ -105,17 +102,9 @@ class HomeMainViewController: ButtonBarPagerTabStripViewController {
 
 extension HomeMainViewController: InstanceViewsProtocol {
     func setupView() {
-        buttonBarView.addSubview(expandView)
-        buttonBarView.bringSubview(toFront: expandView)
     }
     
     func layouterViews() {
-        expandView.snp.makeConstraints { (make) in
-            make.width.equalTo(expandWidth)
-            make.height.equalTo(settings.style.buttonBarHeight!)
-            make.trailing.equalTo(buttonBarView.snp.trailing)
-            make.bottom.equalTo(buttonBarView.snp.bottom)
-        }
     }
 }
 

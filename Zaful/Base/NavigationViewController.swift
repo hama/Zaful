@@ -61,7 +61,6 @@ class NavigationViewController: UINavigationController {
                 return true
             }
         }
-
         return false
     }
 }
