@@ -16,10 +16,11 @@ target 'Zaful' do
     pod 'SwiftyJSON' # json解析
 #    pod 'DKImagePickerController'
     pod 'ESTabBarController-swift' # 自定义tabBar
-    #    pod 'RxSwift'
+    pod 'RxSwift'
     pod 'Moya'           # 网络请求封装库
     pod 'ObjectMapper'   # model 解析
     #    pod 'PromiseKit'     # 异步编程
     pod 'Firebase/Core'
+    pod 'ReachabilitySwift'   #网络监听
 
 end

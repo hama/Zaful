@@ -30,7 +30,9 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - ObjectMapper (3.1.0)
+  - ReachabilitySwift (4.1.0)
   - Result (3.2.4)
+  - RxSwift (4.0.0)
   - SKPhotoBrowser (5.0.0)
   - SnapKit (4.0.0)
   - SQLite.swift (0.11.4):
@@ -49,6 +51,8 @@ DEPENDENCIES:
   - Kingfisher
   - Moya
   - ObjectMapper
+  - ReachabilitySwift
+  - RxSwift
   - SKPhotoBrowser
   - SnapKit
   - SQLite.swift
@@ -70,13 +74,15 @@ SPEC CHECKSUMS:
   Moya: 9e621707ff754eeb51ff3ec51a3d54e517c0733a
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
   SKPhotoBrowser: fe936f878955a568c726bf05d14e1d2717d91ce0
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SQLite.swift: 3e3bee21da701b5b9f87c4a672cb54f233505692
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   XLPagerTabStrip: d1ab378af0923320ec0b5eab11d7b2f803d31261
 
-PODFILE CHECKSUM: ffe21a55a2442ab01287bac385c4ffe9dbfd7028
+PODFILE CHECKSUM: 7fa58dfab9be676eb7509de6ddb205be9452509f
 
 COCOAPODS: 1.3.1

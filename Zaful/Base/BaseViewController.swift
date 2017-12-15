@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Reachability
 
 /// 登录协议，默认都是需要登录
 protocol IsLoginProtocal {
@@ -15,15 +16,11 @@ protocol IsLoginProtocal {
 
 class BaseViewController: UIViewController, IsLoginProtocal {
     
-    func isNeedLogin() -> Bool {
-        return false
-    }
-    
     weak var networkNoticeView: UIView?
-    
-    //MARK: life circle
+    var reachability = Reachability()!
+    // MARK: life circle
     deinit {
-        NotificationCenter.default.removeObserver(self)
+        reachability.stopNotifier()
     }
     
     override func viewDidLoad() {
@@ -32,11 +29,16 @@ class BaseViewController: UIViewController, IsLoginProtocal {
         view.backgroundColor = APPMACROS_MAIN_BACKGROUND
         initNavLeftItem()
         initNetworkNoticeView()
-        addNotificate()
+        startMonitor()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        ProgressHub.dismiss()
     }
     
     //MARK: event response
@@ -44,14 +46,9 @@ class BaseViewController: UIViewController, IsLoginProtocal {
         navigationController?.popViewController(animated: true)
     }
     
-    @objc func networkDidChange(_ notificate: Notification) -> Void {
-        networkNoticeView?.isHidden = (notificate.object as! Bool)
-    }
-    
-    //MARK:add notification
-    func addNotificate() {
-        let notification = Notification.Name(rawValue: NOTIFICATIONMACROS_NETWORK_MONITOR)
-        NotificationCenter.default.addObserver(self, selector: #selector(networkDidChange(_:)), name: notification, object: nil)
+    @objc func networkDidChange(isHidden: Bool) -> Void {
+        networkNoticeView?.isHidden = isHidden
+        view.bringSubview(toFront: networkNoticeView!)
     }
     
     //MARK: init subview
@@ -86,7 +83,10 @@ class BaseViewController: UIViewController, IsLoginProtocal {
             noticeView.qh_width(view.qh_width())
             noticeView.qh_x(0.0)
             noticeView.qh_y(0.0)
-            noticeView.backgroundColor = UIColor.qh_colorWithHex(hexColor: 0xff3574, alpha: 0.6)
+            noticeView.backgroundColor = UIColor(red: 255.0 / 255.0,
+                                                 green: 168.0 / 255.0,
+                                                 blue: 0.0 / 255.0,
+                                                 alpha: 0.65)
             view.addSubview(noticeView)
             networkNoticeView = noticeView
             
@@ -97,6 +97,26 @@ class BaseViewController: UIViewController, IsLoginProtocal {
             noticeLabel.text            = "当前无网络，请检查您的网络设置"
             noticeLabel.qh_x(APPMACROS_BASE_MARGIN * 2)
             noticeView.addSubview(noticeLabel)
+        }
+    }
+    
+    func isNeedLogin() -> Bool {
+        return false
+    }
+    
+    /// 网络监听
+    private func startMonitor() {
+        reachability.whenReachable = { reachability in
+            self.networkDidChange(isHidden: false)
+        }
+        reachability.whenUnreachable = { _ in
+            self.networkDidChange(isHidden: false)
+        }
+        
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
         }
     }
 

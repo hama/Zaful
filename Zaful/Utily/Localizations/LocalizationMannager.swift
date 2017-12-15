@@ -71,9 +71,8 @@ final class LocalizationMannager {
         
         var isExit = false
         for fileName in fileArray {
-            QHLog(fileName)
-            let index1 = fileName.index(fileName.endIndex, offsetBy: -8)
-            let index2 = fileName.index(fileName.endIndex, offsetBy: -6)
+            let index1   = fileName.index(fileName.endIndex, offsetBy: -8)
+            let index2   = fileName.index(fileName.endIndex, offsetBy: -6)
             let langCode = String(fileName[index1..<index2])
             if langCode == systemLanguageCode {
                 isExit = true
@@ -89,6 +88,6 @@ final class LocalizationMannager {
     
     fileprivate func isSetAppNative() -> Bool {
         let userDefault = UserDefaults.standard
-        return userDefault.string(forKey: kCurrentLocalized) != nil
+        return (userDefault.string(forKey: kCurrentLocalized) != nil && isAppNative)
     }
 }

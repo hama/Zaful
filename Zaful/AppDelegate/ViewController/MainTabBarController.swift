@@ -19,19 +19,19 @@ class MainTabBarController: ESTabBarController {
     private func setupTabarController() -> Void {
         
         let homeMainViewController = HomeMainViewController()
-        childViewController(homeMainViewController, "Home", UIImage(named: "tabbar_home_normal")!, UIImage(named: "tabbar_home_selected")!)
+        childViewController(homeMainViewController, LocalizedString("tabbar_title_home"), UIImage(named: "tabbar_home_normal")!, UIImage(named: "tabbar_home_selected")!)
         
         let categorysViewController = CategorysViewController()
-        childViewController(categorysViewController, "Categorys", UIImage(named: "tabbar_category_normal")!, UIImage(named: "tabbar_category_selected")!)
+        childViewController(categorysViewController, LocalizedString("tabbar_title_category"), UIImage(named: "tabbar_category_normal")!, UIImage(named: "tabbar_category_selected")!)
         
         let communityViewController = CommunityViewController()
-        childViewController(communityViewController, "Z-Me", UIImage(named: "tabbar_z-me_normal")!, UIImage(named: "tabbar_z-me_selected")!)
+        childViewController(communityViewController, LocalizedString("tabbar_title_z-me"), UIImage(named: "tabbar_z-me_normal")!, UIImage(named: "tabbar_z-me_selected")!)
         
         let favoriteViewController = FavoriteViewController()
-        childViewController(favoriteViewController, "Favorite", UIImage(named: "tabbar_favorite_normal")!, UIImage(named: "tabbar_favorite_normal")!)
+        childViewController(favoriteViewController, LocalizedString("tabbar_title_favorite"), UIImage(named: "tabbar_favorite_normal")!, UIImage(named: "tabbar_favorite_normal")!)
         
         let mineViewController = MineViewController()
-        childViewController(mineViewController, "Mine", UIImage(named: "tabbar_mine_normal")!, UIImage(named: "tabbar_mine_selected")!)
+        childViewController(mineViewController, LocalizedString("tabbar_title_mine"), UIImage(named: "tabbar_mine_normal")!, UIImage(named: "tabbar_mine_selected")!)
     }
     
     private func childViewController(_ viewController: UIViewController,

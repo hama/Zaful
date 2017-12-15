@@ -22,6 +22,7 @@ class MineViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        ProgressHub.show()
     }
     
     func setupView() -> Void {
@@ -35,8 +36,9 @@ class MineViewController: BaseViewController {
     
     
     @objc func login() -> Void {
-        let loginViewController = LoginViewController()
-        navigationController?.present(loginViewController, animated: true, completion: nil)
+        ProgressHub.showStatus(statusString: "let loginViewController = LoginViewController()navigationController?.present(loginViewController, animated: true, completion: nil)")
+//        let loginViewController = LoginViewController()
+//        navigationController?.present(loginViewController, animated: true, completion: nil)
     }
 
     /*
