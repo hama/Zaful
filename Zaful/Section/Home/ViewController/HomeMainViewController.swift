@@ -8,6 +8,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import AMScrollingNavbar
 
 /// 首页
 class HomeMainViewController: ButtonBarPagerTabStripViewController {
@@ -42,6 +43,13 @@ class HomeMainViewController: ButtonBarPagerTabStripViewController {
         layouterViews()
         requestData()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let navigationBar = navigationController as? ScrollingNavigationController {
+            navigationBar.followScrollView(buttonBarView)
+        }
     }
     
     // MARK: 网络请求

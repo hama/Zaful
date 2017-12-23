@@ -22,5 +22,8 @@ target 'Zaful' do
     #    pod 'PromiseKit'     # 异步编程
     pod 'Firebase/Core'
     pod 'ReachabilitySwift'   #网络监听
+#    pod 'JTAppleCalendar'
+    pod 'AMScrollingNavbar'
+    pod 'BeeHive'
 
 end

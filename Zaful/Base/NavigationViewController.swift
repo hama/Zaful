@@ -8,8 +8,9 @@
 
 import UIKit
 import KeychainAccess
+import AMScrollingNavbar
 
-class NavigationViewController: UINavigationController {
+class NavigationViewController: ScrollingNavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,7 @@ class NavigationViewController: UINavigationController {
             NSAttributedStringKey.font: UIFont.systemFont(ofSize: APPMACROS_BIG_FONTSIZE)
         ];
         self.interactivePopGestureRecognizer?.delegate = self
+//        self.scrollingEnabled = false
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
@@ -65,12 +67,12 @@ class NavigationViewController: UINavigationController {
     }
 }
 
-extension NavigationViewController: UIGestureRecognizerDelegate {
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        if self.viewControllers.count <= 1 {
-            return false
-        }
-        return true
-    }
-}
+//extension NavigationViewController: UIGestureRecognizerDelegate {
+//    override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+//        if self.viewControllers.count <= 1 {
+//            return false
+//        }
+//        return true
+//    }
+//}
 
