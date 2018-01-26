@@ -11,6 +11,29 @@
 import Foundation
 import UIKit
 
+public struct AppMacros {
+    
+    fileprivate init(){}
+    static let version: String = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+
+    /************* 字体大小 *************/
+    static let bigFontSize: CGFloat  = 18.0
+    static let mainFontSize: CGFloat = 14.0
+    static let subFontSize: CGFloat  = 13.0
+    static let sub1FontSize: CGFloat = 12.0
+    static let timeFontSize: CGFloat = 10.0
+    
+    static let bigFont: UIFont  = UIFont.systemFont(ofSize: bigFontSize)
+    static let mainFont: UIFont = UIFont.systemFont(ofSize: mainFontSize)
+    static let subFont: UIFont  = UIFont.systemFont(ofSize: subFontSize)
+    static let sub1Font: UIFont = UIFont.systemFont(ofSize: sub1FontSize)
+    static let timeFont: UIFont = UIFont.systemFont(ofSize: timeFontSize)
+    
+    /************* 字体颜色 *************/
+    static let mianTextColor: UIColor = UIColor.qh_colorWithHex(hexColor: 0x333333)
+    static let subTextColor: UIColor  = UIColor.qh_colorWithHex(hexColor: 0x999999)
+    static let weakTextColor: UIColor = UIColor.qh_colorWithHex(hexColor: 0xcccccc)
+}
 let APPMACROS_APP_VERSION    = Bundle.main.infoDictionary?["CFBundleShortVersionString"] // APP版本
 let APPMACROS_LOGINTOKEN_KEY = "APPMACROS_LOGINTOKEN_KEY"                                // 保存登录token
 

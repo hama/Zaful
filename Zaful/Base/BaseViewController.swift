@@ -106,9 +106,11 @@ class BaseViewController: UIViewController, IsLoginProtocal {
     
     /// 网络监听
     private func startMonitor() {
+        // 网络可用
         reachability.whenReachable = { reachability in
-            self.networkDidChange(isHidden: false)
+            self.networkDidChange(isHidden: true)
         }
+        // 网络不可用
         reachability.whenUnreachable = { _ in
             self.networkDidChange(isHidden: false)
         }

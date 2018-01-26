@@ -13,7 +13,11 @@ import AMScrollingNavbar
 /// 首页
 class HomeMainViewController: ButtonBarPagerTabStripViewController {
     // MARK: 变量
-    let viewModel = HomeMenuViewModel()
+    var viewModel: HomeMenuViewModel = HomeMenuViewModel() {
+        didSet {
+            
+        }
+    }
     var menuViewControllers: [BaseViewController] = [BaseViewController]()
     
     // MARK: 生命周期

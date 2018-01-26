@@ -13,13 +13,15 @@ import SwiftyJSON
 
 final class HomeMenuViewModel: NSObject {
     
+    var isSuccess: Bool
+    var responseMessage: String = ""
+    
     // MARK: -网络请求
-    var isSuccess       = false;
-    var responseMessage = ""
     var menuModels: [HomeMenuModel] = [];
+    var requestObject: Cancellable?
     func requestCompleteHandle(completeHandle:@escaping () -> Void) -> Void {
         let homeRequest = MoyaProvider<HomeRequest>()
-        homeRequest.request(.homeMenu) { result in
+        requestObject = homeRequest.request(.homeMenu) { result in
             switch result {
             case let .success(moyaResponse):
                 QHLog(moyaResponse.statusCode)
@@ -40,11 +42,15 @@ final class HomeMenuViewModel: NSObject {
         }
     }
     
+    func cancelRequest() {
+        requestObject?.cancel()
+    }
+    
     // MARK: private method
     /// 解析数据
     ///
     /// - Parameter Data: 请求返回的流数据
-    private func analysisMenuData(_ data: Data) {
+    fileprivate func analysisMenuData(_ data: Data) {
         let responseJson = try! JSON(data: data)
         let resultJson   = responseJson["result"].array
         QHLog(responseJson)
@@ -57,3 +63,8 @@ final class HomeMenuViewModel: NSObject {
         QHLog(self.menuModels)
     }
 }
+
+extension HomeMenuViewModel: ViewModelProtocol {
+
+}
+

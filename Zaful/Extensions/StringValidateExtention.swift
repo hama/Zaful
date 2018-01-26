@@ -17,7 +17,7 @@ extension String {
     /// - Returns: 是否和手机号规则匹配
     func isMobileNumber() -> Bool {
         
-        guard self.characters.count > 0 else {
+        guard self.count > 0 else {
             return false
         }
         let phoneRegex: String = "^((13[0-9])|(15[^4,\\D])|(18[0,0-9])|(17[0,0-9]))\\d{8}$"

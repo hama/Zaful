@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         configApp()
-        rootViewControllerWithTabbarController()
+        rootViewControllerWithLaunchController()
         return true
     }
 
@@ -59,9 +60,16 @@ extension AppDelegate {
         mainTabBarController?.selectedIndex = TabbarItemIndex.home.rawValue
     }
     
+    /// 设置根 VC
+    func rootViewControllerWithLaunchController() -> Void {
+        let launchViewController = LaunchViewController()
+        window?.rootViewController = launchViewController
+    }
+    
     /// APP 全局配置
     func configApp() {
         ProgressHub.shared.logoImage(UIImage(named: "hub_loading_logo")!)
+        IQKeyboardManager.sharedManager().enable = true
     }
 }
 

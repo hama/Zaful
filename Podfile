@@ -24,6 +24,7 @@ target 'Zaful' do
     pod 'ReachabilitySwift'   #网络监听
 #    pod 'JTAppleCalendar'
     pod 'AMScrollingNavbar'
-    pod 'BeeHive'
+#    pod 'BeeHive'
+    pod 'IQKeyboardManagerSwift'
 
 end

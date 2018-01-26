@@ -20,12 +20,10 @@ let SYSTEMMACROS_SCREEN_HEIGHT:CGFloat = UIScreen.main.bounds.size.height
 /*********** 公共方法 **************/
 // 以375.0(iPone6/7)为基准宽度适配
 func FITSCREEN(f:CGFloat) -> CGFloat {
-    
     return f / 375.0 * SYSTEMMACROS_SCREEN_WIDTH
 }
 
 func QHLog<T>(_ message: T, file: String = #file, funcName: String = #function, lineNum: Int = #line) {
-    
     #if DEBUG
         let fileName             = (file as NSString).lastPathComponent
         let dateFormatter        = DateFormatter()
