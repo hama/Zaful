@@ -13,19 +13,15 @@ import AMScrollingNavbar
 /// 首页
 class HomeMainViewController: ButtonBarPagerTabStripViewController {
     // MARK: 变量
-    var viewModel: HomeMenuViewModel = HomeMenuViewModel() {
-        didSet {
-            
-        }
-    }
+    var viewModel: HomeMenuViewModel = HomeMenuViewModel()
     var menuViewControllers: [BaseViewController] = [BaseViewController]()
     
     // MARK: 生命周期
     override func viewDidLoad() {
         self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
         let menuColor = UIColor(red: 183.0 / 255.0, green: 96.0 / 255.0, blue: 42.0 / 255.0, alpha: 1.0)
-        settings.style.buttonBarItemFont            = APPMACROS_MAIN_FONT
-        settings.style.buttonBarItemTitleColor      = APPMACROS_MAIN_TEXTCOLOR
+        settings.style.buttonBarItemFont            = AppMacros.mainFont
+        settings.style.buttonBarItemTitleColor      = AppMacros.mainTextColor
         settings.style.buttonBarHeight              = 44.0
         settings.style.buttonBarBackgroundColor     = .white
         settings.style.buttonBarItemBackgroundColor = .white
@@ -35,7 +31,7 @@ class HomeMainViewController: ButtonBarPagerTabStripViewController {
         
         changeCurrentIndexProgressive = { [weak self] (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
             guard changeCurrentIndex == true else { return }
-            oldCell?.label.textColor = APPMACROS_MAIN_TEXTCOLOR
+            oldCell?.label.textColor = AppMacros.mainTextColor
             newCell?.label.textColor = menuColor
         }
         
@@ -43,6 +39,7 @@ class HomeMainViewController: ButtonBarPagerTabStripViewController {
         title = LocalizedString("home_title")
         buttonBarView.selectedBar.backgroundColor = menuColor
         buttonBarView.backgroundColor = .white
+        view.backgroundColor = AppMacros.mainBackgroundColor
         setupView()
         layouterViews()
         requestData()

@@ -10,17 +10,16 @@
 import Foundation
 import UIKit
 
-/// 10.0之后的系统版本
-let SYSTEMMACROS_IS_IOS10:Bool         = (UIDevice.current.systemVersion as NSString).doubleValue >= 10.0
-/// 屏幕宽度
-let SYSTEMMACROS_SCREEN_WIDTH:CGFloat  = UIScreen.main.bounds.size.width
-/// 屏幕高度
-let SYSTEMMACROS_SCREEN_HEIGHT:CGFloat = UIScreen.main.bounds.size.height
+struct SystemMacros {
+    static let is_iOS10: Bool        = (UIDevice.current.systemVersion as NSString).doubleValue >= 10.0
+    static let screenWidth: CGFloat  = UIScreen.main.bounds.size.width
+    static let screenHeight: CGFloat = UIScreen.main.bounds.size.height
+}
 
 /*********** 公共方法 **************/
 // 以375.0(iPone6/7)为基准宽度适配
 func FITSCREEN(f:CGFloat) -> CGFloat {
-    return f / 375.0 * SYSTEMMACROS_SCREEN_WIDTH
+    return f / 375.0 * SystemMacros.screenWidth
 }
 
 func QHLog<T>(_ message: T, file: String = #file, funcName: String = #function, lineNum: Int = #line) {

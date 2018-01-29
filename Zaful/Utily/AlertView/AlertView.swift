@@ -11,8 +11,8 @@ import UIKit
 
 class AlertView: NSObject {
     
-    private let containerWidth:CGFloat     = SYSTEMMACROS_SCREEN_WIDTH - 80.0
-    private let maxHeight:CGFloat          = SYSTEMMACROS_SCREEN_HEIGHT - 80.0
+    private let containerWidth:CGFloat     = SystemMacros.screenWidth - 80.0
+    private let maxHeight:CGFloat          = SystemMacros.screenHeight - 80.0
     private let margin:CGFloat             = 10.0
     private static var buttonTag:NSInteger = 0
     private var backgroundView:UIView!
@@ -140,7 +140,7 @@ class AlertView: NSObject {
         if !title.isEmpty {
             
             offsetY = AlertView.share.margin
-            let font:UIFont = APPMACROS_MAIN_FONT
+            let font:UIFont = AppMacros.mainFont
             let size:CGSize = (title as NSString).qh_singleLineSize(font: font)
             
             let titleLabel:UILabel   = UILabel()
@@ -150,7 +150,7 @@ class AlertView: NSObject {
                                               height: size.height)
             titleLabel.font          = font
             titleLabel.textAlignment = NSTextAlignment.center
-            titleLabel.textColor     = APPMACROS_SUB1_TEXTCOLOR
+            titleLabel.textColor     = AppMacros.subTextColor
             titleLabel.text          = title
             AlertView.share.containerView.addSubview(titleLabel)
             
@@ -167,7 +167,7 @@ class AlertView: NSObject {
         if !message.isEmpty {
             
             offsetY += AlertView.share.margin
-            let font:UIFont = APPMACROS_MAIN_FONT
+            let font:UIFont = AppMacros.mainFont
             let size:CGSize = (message as NSString).qh_multeLineSize(font: font,
                                                                      maxSize: CGSize(width: containerWidth
                                                                                             - AlertView.share.margin * 2.0,
@@ -180,7 +180,7 @@ class AlertView: NSObject {
                                                 height: size.height)
             messageLabel.font          = font
             messageLabel.textAlignment = NSTextAlignment.center
-            messageLabel.textColor     = APPMACROS_MAIN_TEXTCOLOR
+            messageLabel.textColor     = AppMacros.mainTextColor
             messageLabel.numberOfLines = 0
             messageLabel.text          = message
             AlertView.share.containerView.addSubview(messageLabel)
@@ -199,8 +199,8 @@ class AlertView: NSObject {
         seperateView.frame           = CGRect(x: 0.0,
                                               y: offsetY,
                                               width: AlertView.share.containerWidth,
-                                              height: APPMACROS_LINE_HEIGHT)
-        seperateView.backgroundColor = APPMACROS_LINECOLOR
+                                              height: AppMacros.separetorHeight)
+        seperateView.backgroundColor = AppMacros.separetorLineColor
         AlertView.share.containerView.addSubview(seperateView)
         
         return offsetY;
@@ -227,8 +227,8 @@ class AlertView: NSObject {
                 offsetY = AlertView.share.initButton(titile: titleString,
                                                      frame: CGRect(x: buttonWidth * CGFloat(AlertView.buttonTag),
                                                                    y: offsetY,
-                                                                   width: buttonWidth + APPMACROS_LINE_HEIGHT,
-                                                                   height: buttonHeight + APPMACROS_LINE_HEIGHT))
+                                                                   width: buttonWidth + AppMacros.separetorHeight,
+                                                                   height: buttonHeight + AppMacros.separetorHeight))
             }
             offsetY += buttonHeight;
         } else {
@@ -257,20 +257,20 @@ class AlertView: NSObject {
         let button:UIButton      = UIButton(type: .custom)
         button.frame             = frame
         button.tag               = AlertView.buttonTag
-        button.layer.borderColor = APPMACROS_LINECOLOR.cgColor
-        button.layer.borderWidth = APPMACROS_LINE_HEIGHT
-        button.titleLabel?.font  = UIFont.systemFont(ofSize: APPMACROS_MAIN_FONTSIZE)
-        button.setTitleColor(APPMACROS_MAIN_TEXTCOLOR, for: .normal)
+        button.layer.borderColor = AppMacros.separetorLineColor.cgColor
+        button.layer.borderWidth = AppMacros.separetorHeight
+        button.titleLabel?.font  = AppMacros.mainFont
+        button.setTitleColor(AppMacros.mainTextColor, for: .normal)
         button.setTitle(titile, for: .normal)
         button.addTarget(self, action: #selector(AlertView.share.buttonAction(btn:)), for: UIControlEvents.touchUpInside)
         
         if frame.size.width == AlertView.share.containerView.qh_width() {
             
             offsetY += frame.size.height
-            button.qh_y(frame.origin.y - APPMACROS_LINE_HEIGHT)
+            button.qh_y(frame.origin.y - AppMacros.separetorHeight)
         } else if AlertView.buttonTag <= 1 {
             
-            button.setTitleColor(APPMACROS_MAINCOLOR, for: .normal)
+            button.setTitleColor(AppMacros.mainColor, for: .normal)
         }
         
         AlertView.share.containerView.addSubview(button);

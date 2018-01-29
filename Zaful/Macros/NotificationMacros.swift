@@ -9,4 +9,6 @@
 /************ 全局通知宏定义 ********/
 import Foundation
 
-let NOTIFICATIONMACROS_NETWORK_MONITOR = "NOTIFICATIONMACROS_NETWORK_MONITOR"
+struct NotificationMacros {
+    static let netWorkMonitor: String = "NOTIFICATIONMACROS_NETWORK_MONITOR"
+}

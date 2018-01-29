@@ -13,12 +13,12 @@ class TabbarBasicContentView: ESTabBarItemContentView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        textColor = APPMACROS_SUB1_TEXTCOLOR
-        iconColor = APPMACROS_SUB1_TEXTCOLOR
+        textColor = AppMacros.subTextColor
+        iconColor = AppMacros.subTextColor
         
         highlightTextColor = .black
         highlightIconColor = .black
-        badgeColor         = APPMACROS_BAGBADVALUE_COLOR
+        badgeColor         = AppMacros.mainColor
     }
     
     public required init?(coder aDecoder: NSCoder) {

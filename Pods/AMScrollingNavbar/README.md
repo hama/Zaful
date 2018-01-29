@@ -13,10 +13,6 @@
 A custom UINavigationController that enables the scrolling of the navigation bar alongside the
 scrolling of an observed content view  
 
-<a target="_blank" rel="nofollow" href="https://app.codesponsor.io/link/9Jjp1jzKpTgCg7fq5tVzNmnV/andreamazz/AMScrollingNavbar">
-  <img alt="Sponsor" width="888" height="68" src="https://app.codesponsor.io/embed/9Jjp1jzKpTgCg7fq5tVzNmnV/andreamazz/AMScrollingNavbar.svg" />
-</a>
-
 <p align="center">
   <a href='https://appetize.io/app/31qahv9v4477ja36k8dn93wr8m' alt='Live demo'>
     <img width="150" height="75" src="assets/demo-button.png"/>
@@ -107,6 +103,7 @@ if let navigationController = navigationController as? ScrollingNavigationContro
     navigationController.followScrollView(tableView, delay: 50.0, followers: [toolbar])
 }
 ```
+Note that when navigating away from the controller the followers might keep the scroll offset. Refer to [Handling navigation](https://github.com/andreamazz/AMScrollingNavbar#handling-navigation) for proper setup.  
 
 ## Scrolling the TabBar
 You can also pass a `UITabBar` in the `followers` array:
@@ -143,7 +140,7 @@ func scrollingNavigationController(_ controller: ScrollingNavigationController, 
 If the view controller with the scroll view pushes new controllers, you should call `showNavbar(animated:)` in your `viewWillDisappear(animated:)`:
 ```swift
 override func viewWillDisappear(_ animated: Bool) {
-  super.viewWillDisappear(animated)
+    super.viewWillDisappear(animated)
     if let navigationController = navigationController as? ScrollingNavigationController {
       navigationController.showNavbar(animated: true)
     }

@@ -11,9 +11,9 @@ import Moya
 import ObjectMapper
 import SwiftyJSON
 
-final class HomeMenuViewModel: NSObject {
+final class HomeMenuViewModel: ViewModelProtocol {
     
-    var isSuccess: Bool
+    var isSuccess: Bool = false
     var responseMessage: String = ""
     
     // MARK: -网络请求
@@ -62,9 +62,5 @@ final class HomeMenuViewModel: NSObject {
         }
         QHLog(self.menuModels)
     }
-}
-
-extension HomeMenuViewModel: ViewModelProtocol {
-
 }
 

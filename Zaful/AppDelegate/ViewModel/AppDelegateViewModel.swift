@@ -11,10 +11,20 @@ import Moya
 import ObjectMapper
 import SwiftyJSON
 
-
-final class AppDelegateViewModel: BaseViewModel {
-    // MARK: 网络请求
-    override func requestCompleteHandle(completeHandle: @escaping () -> Void) {
-        
+final class AppDelegateViewModel: ViewModelProtocol {
+    var requestObject: Cancellable?
+    
+    var responseMessage: String = ""
+    
+    func requestCompleteHandle(completeHandle: @escaping () -> Void) {
+        let appInitRequet = MoyaProvider<MultiTarget>()
+        requestObject = appInitRequet.request(MultiTarget(AppDelegateRequest.appNewVersion), completion: { result in
+            
+        })
     }
+    
+    func cancelRequest() {
+        requestObject?.cancel()
+    }
+    
 }

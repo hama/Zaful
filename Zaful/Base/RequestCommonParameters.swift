@@ -12,7 +12,7 @@ import Foundation
 final class RequestCommonParameters {
     class func parameters() -> [String: Any] {
         let parameters: [String : Any] = ["lang" : LocalizationMannager.share.languageCode,
-                                          "version": APPMACROS_APP_VERSION!,
+                                          "version": AppMacros.version,
                                           "token": LoginMannager.share.token,
                                           "is_enc": false]
         return parameters

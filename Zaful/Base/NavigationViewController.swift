@@ -16,8 +16,8 @@ class NavigationViewController: ScrollingNavigationController {
         super.viewDidLoad()
         let apperance:UINavigationBar = UINavigationBar.appearance()
         apperance.titleTextAttributes = [
-            NSAttributedStringKey.foregroundColor: APPMACROS_MAIN_TEXTCOLOR,
-            NSAttributedStringKey.font: UIFont.systemFont(ofSize: APPMACROS_BIG_FONTSIZE)
+            NSAttributedStringKey.foregroundColor: AppMacros.mainTextColor,
+            NSAttributedStringKey.font: AppMacros.bigFont
         ];
         self.interactivePopGestureRecognizer?.delegate = self
 //        self.scrollingEnabled = false

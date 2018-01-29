@@ -26,7 +26,7 @@ class BaseViewController: UIViewController, IsLoginProtocal {
     override func viewDidLoad() {
         self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
         super.viewDidLoad()
-        view.backgroundColor = APPMACROS_MAIN_BACKGROUND
+        view.backgroundColor = AppMacros.mainBackgroundColor
         initNavLeftItem()
         initNetworkNoticeView()
         startMonitor()
@@ -93,9 +93,9 @@ class BaseViewController: UIViewController, IsLoginProtocal {
             let noticeLabel             = UILabel(frame: noticeView.bounds)
             noticeLabel.backgroundColor = .clear
             noticeLabel.textColor       = .white
-            noticeLabel.font            = APPMACROS_MAIN_FONT
+            noticeLabel.font            = AppMacros.mainFont
             noticeLabel.text            = "当前无网络，请检查您的网络设置"
-            noticeLabel.qh_x(APPMACROS_BASE_MARGIN * 2)
+            noticeLabel.qh_x(AppMacros.baseMargin * 2)
             noticeView.addSubview(noticeLabel)
         }
     }

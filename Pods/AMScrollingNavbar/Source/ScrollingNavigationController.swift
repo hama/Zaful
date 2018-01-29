@@ -4,14 +4,18 @@ import UIKit
  Scrolling Navigation Bar delegate protocol
  */
 @objc public protocol ScrollingNavigationControllerDelegate: NSObjectProtocol {
-  /**
-   Called when the state of the navigation bar changes
-   */
+  /// Called when the state of the navigation bar changes
+  ///
+  /// - Parameters:
+  ///   - controller: the ScrollingNavigationController
+  ///   - state: the new state
   @objc optional func scrollingNavigationController(_ controller: ScrollingNavigationController, didChangeState state: NavigationBarState)
-
-  /**
-   Called when the state of the navigation bar is about to change
-   */
+  
+  /// Called when the state of the navigation bar is about to change
+  ///
+  /// - Parameters:
+  ///   - controller: the ScrollingNavigationController
+  ///   - state: the new state
   @objc optional func scrollingNavigationController(_ controller: ScrollingNavigationController, willChangeState state: NavigationBarState)
 }
 
@@ -24,6 +28,18 @@ import UIKit
  */
 @objc public enum NavigationBarState: Int {
   case collapsed, expanded, scrolling
+}
+
+/**
+ The direction of scrolling that the navigation bar should be collapsed.
+ The raw value determines the sign of content offset depending of collapse direction.
+ 
+ - scrollUp: scrolling up direction
+ - scrollDown: scrolling down direction
+ */
+@objc public enum NavigationBarCollapseDirection: Int {
+  case scrollUp = -1
+  case scrollDown = 1
 }
 
 /**
@@ -85,6 +101,7 @@ open class ScrollingNavigationController: UINavigationController, UIGestureRecog
   var scrollableView: UIView?
   var lastContentOffset = CGFloat(0.0)
   var scrollSpeedFactor: CGFloat = 1
+  var collapseDirectionFactor: CGFloat = 1 // Used to determine the sign of content offset depending of collapse direction
   var previousState: NavigationBarState = .expanded // Used to mark the state before the app goes in background
 
   /**
@@ -95,9 +112,10 @@ open class ScrollingNavigationController: UINavigationController, UIGestureRecog
    - parameter scrollableView: The view with the scrolling content that will be observed
    - parameter delay: The delay expressed in points that determines the scrolling resistance. Defaults to `0`
    - parameter scrollSpeedFactor : This factor determines the speed of the scrolling content toward the navigation bar animation
+   - parameter collapseDirection : The direction of scrolling that the navigation bar should be collapsed
    - parameter followers: An array of `UIView`s that will follow the navbar
    */
-  open func followScrollView(_ scrollableView: UIView, delay: Double = 0, scrollSpeedFactor: Double = 1, followers: [UIView] = []) {
+  open func followScrollView(_ scrollableView: UIView, delay: Double = 0, scrollSpeedFactor: Double = 1, collapseDirection: NavigationBarCollapseDirection = .scrollDown, followers: [UIView] = []) {
     self.scrollableView = scrollableView
 
     gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(ScrollingNavigationController.handlePan(_:)))
@@ -120,6 +138,7 @@ open class ScrollingNavigationController: UINavigationController, UIGestureRecog
     }
     self.followers = followers
     self.scrollSpeedFactor = CGFloat(scrollSpeedFactor)
+    self.collapseDirectionFactor = CGFloat(collapseDirection.rawValue)
   }
 
   /**
@@ -212,7 +231,7 @@ open class ScrollingNavigationController: UINavigationController, UIGestureRecog
     if gesture.state != .failed {
       if let superview = scrollableView?.superview {
         let translation = gesture.translation(in: superview)
-        let delta = (lastContentOffset - translation.y) / scrollSpeedFactor
+        let delta = collapseDirectionFactor * (lastContentOffset - translation.y) / scrollSpeedFactor
         lastContentOffset = translation.y
 
         if shouldScrollWithDelta(delta) {
@@ -342,6 +361,15 @@ open class ScrollingNavigationController: UINavigationController, UIGestureRecog
     updateNavbarAlpha()
     restoreContentOffset(scrollDelta)
     updateFollowers(scrollDelta)
+    updateContentInset(scrollDelta)
+  }
+
+  /// Adjust the top inset (useful when a table view has floating headers, see issue #219
+  private func updateContentInset(_ delta: CGFloat) {
+    if let contentInset = scrollView()?.contentInset, let scrollInset = scrollView()?.scrollIndicatorInsets {
+      scrollView()?.contentInset = UIEdgeInsets(top: contentInset.top - delta, left: contentInset.left, bottom: contentInset.bottom, right: contentInset.right)
+      scrollView()?.scrollIndicatorInsets = UIEdgeInsets(top: scrollInset.top - delta, left: scrollInset.left, bottom: scrollInset.bottom, right: scrollInset.right)
+    }
   }
 
   private func updateFollowers(_ delta: CGFloat) {
@@ -411,11 +439,12 @@ open class ScrollingNavigationController: UINavigationController, UIGestureRecog
     }
 
     delayDistance = maxDelay
-
+    
     UIView.animate(withDuration: duration, delay: 0, options: UIViewAnimationOptions.beginFromCurrentState, animations: {
       self.updateSizing(delta)
       self.updateFollowers(delta)
       self.updateNavbarAlpha()
+      self.updateContentInset(delta)
     }, completion: nil)
   }
 
@@ -459,15 +488,11 @@ open class ScrollingNavigationController: UINavigationController, UIGestureRecog
 
     // Hide the left items
     navigationItem.leftBarButtonItem?.customView?.alpha = alpha
-    if let leftItems = navigationItem.leftBarButtonItems {
-      leftItems.forEach { $0.customView?.alpha = alpha }
-    }
+    navigationItem.leftBarButtonItems?.forEach { $0.customView?.alpha = alpha }
 
     // Hide the right items
     navigationItem.rightBarButtonItem?.customView?.alpha = alpha
-    if let rightItems = navigationItem.rightBarButtonItems {
-      rightItems.forEach { $0.customView?.alpha = alpha }
-    }
+    navigationItem.rightBarButtonItems?.forEach { $0.customView?.alpha = alpha }
   }
 
   // MARK: - UIGestureRecognizerDelegate

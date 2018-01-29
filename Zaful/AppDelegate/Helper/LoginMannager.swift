@@ -20,7 +20,7 @@ final class LoginMannager {
     var token: String {
         get {
             let keyChain = Keychain(service: String.rootURL())
-            let tokenKey = keyChain[APPMACROS_LOGINTOKEN_KEY]
+            let tokenKey = keyChain[AppMacros.tokenKey]
             guard (tokenKey != nil) else {
                 return ""
             }
@@ -29,7 +29,7 @@ final class LoginMannager {
         
         set(newToken) {
             let keyChain = Keychain(service: String.rootURL())
-            keyChain[APPMACROS_LOGINTOKEN_KEY] = newToken
+            keyChain[AppMacros.tokenKey] = newToken
         }
     }
 }

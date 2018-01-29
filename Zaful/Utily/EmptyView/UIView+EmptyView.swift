@@ -65,7 +65,7 @@ extension UIView {
                               description: String,
                               buttonTitles: [String]) -> Void {
         
-        let font:UIFont     = UIFont.systemFont(ofSize: APPMACROS_MAIN_FONTSIZE)
+        let font:UIFont     = AppMacros.mainFont
         
         // 背景
         let backgroundView:UIView      = UIView()
@@ -99,7 +99,7 @@ extension UIView {
                                         height: descriptionSize.height)
         descriptionLabel.textAlignment = .center
         descriptionLabel.font          = font
-        descriptionLabel.textColor     = APPMACROS_SUB_TEXTCOLOR
+        descriptionLabel.textColor     = AppMacros.subTextColor
         descriptionLabel.numberOfLines = 0
         descriptionLabel.text          = description
         descriptionLabel.tag           = EMPTYVIEW_TAG + 2
@@ -123,12 +123,12 @@ extension UIView {
                                               width: buttonWidth,
                                               height: size.height + 10.0)
             button.tag                 = EMPTYVIEW_TAG + 3 + index
-            button.layer.borderColor   = APPMACROS_MAINCOLOR.cgColor
-            button.layer.borderWidth   = APPMACROS_LINE_HEIGHT
+            button.layer.borderColor   = AppMacros.mainColor.cgColor
+            button.layer.borderWidth   = AppMacros.separetorHeight
             button.layer.cornerRadius  = 3.0
             button.layer.masksToBounds = true
-            button.titleLabel?.font    = UIFont.systemFont(ofSize: APPMACROS_MAIN_FONTSIZE)
-            button.setTitleColor(APPMACROS_MAINCOLOR, for: .normal)
+            button.titleLabel?.font    = AppMacros.mainFont
+            button.setTitleColor(AppMacros.mainColor, for: .normal)
             button.setTitle(title, for: .normal)
             button.addTarget(self,
                              action: #selector(self.btnAction(btn:)),
