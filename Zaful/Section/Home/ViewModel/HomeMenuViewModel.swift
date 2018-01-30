@@ -33,6 +33,7 @@ final class HomeMenuViewModel: ViewModelProtocol {
                 self.isSuccess   = true
                 self.analysisMenuData(moyaResponse.data)
                 completeHandle()
+                
             case let .failure(error):
                 QHLog(error.errorDescription)
                 self.isSuccess       = false

@@ -83,10 +83,7 @@ class BaseViewController: UIViewController, IsLoginProtocal {
             noticeView.qh_width(view.qh_width())
             noticeView.qh_x(0.0)
             noticeView.qh_y(0.0)
-            noticeView.backgroundColor = UIColor(red: 255.0 / 255.0,
-                                                 green: 168.0 / 255.0,
-                                                 blue: 0.0 / 255.0,
-                                                 alpha: 0.65)
+            noticeView.backgroundColor = AppMacros.mainColor
             view.addSubview(noticeView)
             networkNoticeView = noticeView
             

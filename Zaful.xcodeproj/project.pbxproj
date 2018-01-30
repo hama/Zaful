@@ -19,7 +19,6 @@
 		A459E12E1FF3367700AD4505 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459E12D1FF3367700AD4505 /* LaunchViewController.swift */; };
 		A459E1301FF375B400AD4505 /* AppDelegateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459E12F1FF375B400AD4505 /* AppDelegateRequest.swift */; };
 		A459E1321FF37E6600AD4505 /* AppDelegateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459E1311FF37E6600AD4505 /* AppDelegateViewModel.swift */; };
-		A459E1341FF3983200AD4505 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459E1331FF3983200AD4505 /* BaseViewModel.swift */; };
 		A459E1361FF39BF300AD4505 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A459E1351FF39BF300AD4505 /* ViewModelProtocol.swift */; };
 		A4627CD61FC7B23200A714FA /* HomeMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4627CD51FC7B23200A714FA /* HomeMenuModel.swift */; };
 		A48452F21FBBD84F00A8C821 /* GoogleService-Info .plist in Resources */ = {isa = PBXBuildFile; fileRef = A48452F11FBBD84F00A8C821 /* GoogleService-Info .plist */; };
@@ -95,7 +94,6 @@
 		A459E12D1FF3367700AD4505 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		A459E12F1FF375B400AD4505 /* AppDelegateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRequest.swift; sourceTree = "<group>"; };
 		A459E1311FF37E6600AD4505 /* AppDelegateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateViewModel.swift; sourceTree = "<group>"; };
-		A459E1331FF3983200AD4505 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		A459E1351FF39BF300AD4505 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		A4627CD51FC7B23200A714FA /* HomeMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuModel.swift; sourceTree = "<group>"; };
 		A48452F11FBBD84F00A8C821 /* GoogleService-Info .plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info .plist"; sourceTree = "<group>"; };
@@ -241,7 +239,6 @@
 				A450A39B1FB6C65A0009CD02 /* NavigationViewController.swift */,
 				A4B993031FDB865A0001DF38 /* RequestCommonParameters.swift */,
 				A4B993211FDFB2220001DF38 /* InstanceViewsProtocol.swift */,
-				A459E1331FF3983200AD4505 /* BaseViewModel.swift */,
 				A459E1351FF39BF300AD4505 /* ViewModelProtocol.swift */,
 			);
 			path = Base;
@@ -942,7 +939,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4B882171FC2E25000B460EF /* AppMacros.swift in Sources */,
-				A459E1341FF3983200AD4505 /* BaseViewModel.swift in Sources */,
 				A4B882061FC2E22C00B460EF /* LoopCollectionViewCell.swift in Sources */,
 				A4B993101FDE5A0C0001DF38 /* VirtualCategoryViewController.swift in Sources */,
 				A48AF0761FC6F06400790932 /* HomeRequest.swift in Sources */,

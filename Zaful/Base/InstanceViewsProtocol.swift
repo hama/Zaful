@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 protocol InstanceViewsProtocol {
     func setupView()
     func layouterViews()
