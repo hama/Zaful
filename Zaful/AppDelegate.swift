@@ -24,6 +24,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         configApp()
         rootViewControllerWithTabbarController()
+        
+        let appDelegateViewModel: AppDelegateViewModel = AppDelegateViewModel()
+        appDelegateViewModel.numbers.subscribe(onNext: { isSuccess in
+            print("取得 json 成功: \(isSuccess)")
+        }, onError: { error in
+            print("取得 json 失败 Error: \(error.localizedDescription)")
+        }, onCompleted: {
+            print("取得 json 任务成功完成")
+        }).dispose()
         return true
     }
 

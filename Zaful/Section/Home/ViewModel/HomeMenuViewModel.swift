@@ -19,7 +19,7 @@ final class HomeMenuViewModel: ViewModelProtocol {
     // MARK: -网络请求
     var menuModels: [HomeMenuModel] = [];
     var requestObject: Cancellable?
-    func requestCompleteHandle(completeHandle:@escaping () -> Void) -> Void {
+    func requestCompleteHandle() -> Void {
         let homeRequest = MoyaProvider<HomeRequest>()
         requestObject = homeRequest.request(.homeMenu) { result in
             switch result {
@@ -32,13 +32,11 @@ final class HomeMenuViewModel: ViewModelProtocol {
                 }
                 self.isSuccess   = true
                 self.analysisMenuData(moyaResponse.data)
-                completeHandle()
                 
             case let .failure(error):
                 QHLog(error.errorDescription)
                 self.isSuccess       = false
                 self.responseMessage = error.errorDescription!
-                completeHandle()
             }
         }
     }

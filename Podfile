@@ -18,6 +18,7 @@ target 'Zaful' do
     pod 'ESTabBarController-swift' # 自定义tabBar
     pod 'RxSwift'
     pod 'Moya'           # 网络请求封装库
+    pod 'Moya/RxSwift'
     pod 'ObjectMapper'   # model 解析
     #    pod 'PromiseKit'     # 异步编程
     pod 'Firebase/Core'

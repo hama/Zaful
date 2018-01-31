@@ -56,10 +56,6 @@ class HomeMainViewController: ButtonBarPagerTabStripViewController {
     // MARK: 网络请求
     private func requestData() {
         ProgressHub.show()
-        viewModel.requestCompleteHandle {
-            ProgressHub.dismiss()
-            self.reloadPagerTabStripView()
-        }
     }
     
     // MARK: 私有方法

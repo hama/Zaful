@@ -18,7 +18,7 @@ protocol ViewModelProtocol {
     /// 请求对象
     var requestObject: Cancellable?{get set}
     /// 请求函数
-    func requestCompleteHandle(completeHandle:@escaping () -> Void) -> Void
+    func requestCompleteHandle() -> Void
     // 取消请求函数
     func cancelRequest()
 }

@@ -12,7 +12,7 @@ import Moya
 enum AppDelegateRequest {
     case appNewVersion   // 版本更新接口
     case exchangeRate    // 汇率列表
-    case codFilter       // cod折扣过滤
+    case codFilter       // cod折扣过滤(货到付款)
     case hotSearchWords  // 热搜词列表
     case userInfo        // 用户信息
 }
